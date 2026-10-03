@@ -1,4 +1,4 @@
-/* ==========================================================================
+﻿/* ==========================================================================
    Home of 17. —— 应用层：路由、导航树、本页目录、搜索、主题
    ========================================================================== */
 (function () {
@@ -80,6 +80,7 @@
 
     html += sectionHtml('about', '关于本站',
       linkHtml('#/about', 'about', '关于本站') + linkHtml('#/help', 'help', '需要帮助时'));
+    html += linkHtml('#/letters', 'letters', '读者想说');
     html += '</ul>';
     navTree.innerHTML = html;
 
@@ -165,6 +166,7 @@
     } else if (root === 'resources') out.push({ t: '资源库' });
     else if (root === 'about') out.push({ t: '关于本站' });
     else if (root === 'help') { out.push({ t: '关于本站', h: '#/about' }); out.push({ t: '需要帮助时' }); }
+    else if (root === 'letters') out.push({ t: '读者想说' });
     return out;
   }
 
@@ -211,6 +213,8 @@
       html = R.aboutHtml(); title = '关于本站'; navKey = 'about';
     } else if (root === 'help') {
       html = R.helpHtml(); title = '需要帮助时'; navKey = 'help';
+    } else if (root === 'letters') {
+      html = R.lettersPageHtml(); title = '读者想说'; navKey = 'letters';
     } else {
       html = R.notFound(); navKey = '';
     }
@@ -345,7 +349,7 @@
     var art = document.querySelector('.md-content');
     if (!art) return;
     var clone = art.cloneNode(true);
-    ['.md-actions', '[data-prevnext]', '.signoff', '.md-breadcrumbs', '.letters'].forEach(function (sel) {
+    ['.md-actions', '[data-prevnext]', '.signoff', '.md-breadcrumbs'].forEach(function (sel) {
       var n = clone.querySelector(sel); if (n) n.remove();
     });
     window.printHtml('<h1>' + esc(b.dataset.print) + '</h1>' + clone.innerHTML);

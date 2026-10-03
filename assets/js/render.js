@@ -1,4 +1,4 @@
-/* ==========================================================================
+﻿/* ==========================================================================
    Home of 17. —— 渲染层
    ========================================================================== */
 (function () {
@@ -143,6 +143,7 @@
     out.push({ title: '资源库', href: '#/resources', crumb: ['首页', '资源库'] });
     out.push({ title: '关于本站', href: '#/about', crumb: ['首页', '关于本站'] });
     out.push({ title: '需要帮助时', href: '#/help', crumb: ['首页', '关于本站', '需要帮助时'] });
+    out.push({ title: '读者想说', href: '#/letters', crumb: ['首页', '读者想说'] });
     return out;
   }
 
@@ -167,8 +168,8 @@
       '<a href="mailto:' + esc(window.SITE.email) + '">' + esc(window.SITE.email) + '</a></p></footer>';
   }
 
-  /* ---------------- 读者想说 ---------------- */
-  function lettersHtml() {
+  /* ---------------- 读者想说（只在全站最后一页出现） ---------------- */
+  function lettersBodyHtml() {
     var L = window.LETTERS;
     if (!L) return '';
 
@@ -187,9 +188,6 @@
       : '<p class="letters__empty">' + esc(L.wallEmpty) + '</p>';
 
     return '<section class="letters" id="letters" data-letters>' +
-      '<h2 id="letters-title">' + esc(L.title) + '</h2>' +
-      '<p class="letters__lead">' + inline(L.lead) + '</p>' +
-
       '<div class="letters__prompts">' +
       '<p class="letters__prompts-title">' + esc(L.promptsTitle) + '</p>' +
       '<ul>' + (L.prompts || []).map(function (p) { return '<li>' + inline(p) + '</li>'; }).join('') + '</ul>' +
@@ -225,11 +223,19 @@
       '</section>';
   }
 
+  function lettersPageHtml() {
+    var L = window.LETTERS;
+    return pageWrap(
+      '<p class="kicker">写在最后</p>' +
+      '<h1 id="letters-title">' + esc(L.title) + '</h1>' +
+      '<p class="lead-xl">' + inline(L.lead) + '</p>' +
+      lettersBodyHtml(), 'letters');
+  }
+
   function pageWrap(body, pageId, opts) {
     opts = opts || {};
     return '<article class="md-content" data-page="' + esc(pageId || '') + '">' +
       '<nav class="md-breadcrumbs" data-crumb aria-label="位置"></nav>' + body +
-      (opts.noLetters ? '' : lettersHtml()) +
       (opts.noSignoff ? '' : signoffHtml()) +
       '<nav class="md-prevnext" data-prevnext aria-label="翻页"></nav></article>';
   }
@@ -345,7 +351,7 @@
       '<p>状态记录、复盘、清单勾选、任务清单等数据都存放在本浏览器，换设备不会同步，建议定期导出备份。</p>' +
       '<div class="btn-row"><button class="btn btn-sm" type="button" id="exportAll">导出全部数据（JSON）</button>' +
       '<button class="btn btn-sm btn-danger" type="button" id="clearAll">清空全部记录</button></div>',
-      'tools', { noLetters: true });
+      'tools');
   }
 
   function toolPageHtml(id) {
@@ -357,7 +363,7 @@
       '<p class="tool-note">' + esc(t.note) + '</p>' +
       (window.TOOLVIEWS && window.TOOLVIEWS[id] ? window.TOOLVIEWS[id]() : '<div class="empty">工具加载中…</div>') +
       '<div class="md-actions"><a class="btn btn-sm btn-ghost" href="#/tools">← 全部工具</a></div>',
-      'tools/' + id, { noLetters: true });
+      'tools/' + id);
   }
 
   /* ---------------- 资源库 ---------------- */
@@ -410,7 +416,7 @@
           '<div class="meta">' + esc(x.meta) + '</div></div>' +
           '<a class="btn btn-sm" href="tel:' + esc(x.tel) + '">拨打</a></div>';
       }).join('') +
-      '<p class="tiny muted">' + h.notes.map(esc).join('　') + '</p>', 'help', { noLetters: true });
+      '<p class="tiny muted">' + h.notes.map(esc).join('　') + '</p>', 'help');
   }
 
   /* ---------------- 关于 ---------------- */
@@ -427,7 +433,7 @@
 
   function notFound(msg) {
     return pageWrap('<h1>页面不存在</h1><p class="lead-xl">' + esc(msg || '没有找到这个页面。') + '</p>' +
-      '<p><a class="btn btn-primary" href="#/home">回到首页</a></p>', '404', { noSignoff: true, noLetters: true });
+      '<p><a class="btn btn-primary" href="#/home">回到首页</a></p>', '404', { noSignoff: true });
   }
 
   /* ---------------- 搜索索引 ---------------- */
@@ -483,6 +489,8 @@
         if (b.t === 'table') return b.head.join(' ') + ' ' + b.rows.map(function (r) { return r.join(' '); }).join(' ');
         return '';
       }).join(' ') });
+    INDEX.push({ type: '读者想说', path: ['读者想说'], title: window.LETTERS.title, href: '#/letters',
+      text: window.LETTERS.title + ' ' + window.LETTERS.lead + ' ' + (window.LETTERS.prompts || []).join(' ') + ' 留言 感想 反馈 联系作者' });
     INDEX.push({ type: '关于本站', path: ['关于本站', '需要帮助时'], title: window.HELP.title, href: '#/help',
       text: window.HELP.lead + ' ' + (window.HELP.hotlines || []).map(function (x) { return x.num + ' ' + x.name; }).join(' ') });
     return INDEX;
@@ -525,6 +533,7 @@
   R.flatPages = flatPages;
   R.cardsHtml = cardsHtml;
   R.homeHtml = homeHtml;
+  R.lettersPageHtml = lettersPageHtml;
   R.prefaceHtml = prefaceHtml;
   R.moduleHtml = moduleHtml;
   R.articleHtml = articleHtml;
