@@ -1,4 +1,4 @@
-/* ==========================================================================
+﻿/* ==========================================================================
    Home of 17.  —  Minimalist Monochrome
    纯黑白、零圆角、零阴影，靠线、字与留白建立秩序。
    ========================================================================== */
@@ -643,7 +643,68 @@ canvas { max-width: 100%; filter: grayscale(1); }
 .result-box { border: 2px solid var(--border); padding: 22px 24px; margin-top: 20px; }
 .result-score { font-family: var(--font-display); font-size: 2.6rem; line-height: 1.1; margin-bottom: 8px; }
 
-/* ---------- 11. 资源库 ---------- */
+/* ---------- 11. 读者想说 ---------- */
+.letters { margin-top: 1rem; }
+.letters__lead { font-size: 1.05rem; max-width: 44rem; }
+.letters__prompts {
+  border: 1px solid var(--border-light); padding: 18px 22px; margin: 0 0 24px;
+}
+.letters__prompts-title {
+  font-family: var(--font-mono); font-size: .68rem; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--muted-fg); margin: 0 0 10px;
+}
+.letters__prompts ul { margin: 0; padding-left: 1.2em; }
+.letters__prompts li { font-size: .95rem; }
+.letters__form { margin-bottom: 10px; max-width: 44rem; }
+.letters__note { font-size: .88rem; color: var(--muted-fg); max-width: 44rem; }
+
+.letters__mine {
+  margin: 30px 0 0; padding: 20px 22px; border: 1px solid var(--border);
+}
+.letters__mine h3 {
+  font-family: var(--font-mono); font-size: .72rem; letter-spacing: .16em;
+  text-transform: uppercase; font-weight: 500; margin: 0 0 6px;
+  display: flex; align-items: center; gap: 10px;
+}
+.letters__mine-note { font-size: .84rem; color: var(--muted-fg); margin: 0 0 10px; }
+.letters__list { display: grid; }
+
+.letter { border-top: 1px solid var(--border-light); padding: 16px 0; }
+.letter:first-child { border-top: 0; padding-top: 0; }
+.letter__meta { display: flex; align-items: center; gap: 12px; margin-bottom: 6px; flex-wrap: wrap; }
+.letter__name { font-weight: 700; font-size: .94rem; }
+.letter__date {
+  font-family: var(--font-mono); font-size: .68rem; letter-spacing: .1em; color: var(--muted-fg);
+}
+.letter__text { margin: 0; font-size: .96rem; white-space: pre-wrap; }
+.letter__reply {
+  margin: 10px 0 0; padding-left: 16px; border-left: 3px solid var(--border);
+  font-size: .92rem; color: var(--muted-fg);
+}
+.letter__reply-label {
+  display: block; font-family: var(--font-mono); font-size: .62rem;
+  letter-spacing: .16em; text-transform: uppercase; color: var(--fg); margin-bottom: 3px;
+}
+.letter--mine .letter__meta { justify-content: space-between; }
+.letter--mine .letter__text { font-size: .94rem; }
+
+.letters__wall-title {
+  font-size: 1.05rem; margin: 2.4rem 0 .4rem;
+}
+.letters__wall-note { font-size: .86rem; color: var(--muted-fg); margin: 0 0 12px; }
+.letters__wall { max-width: 44rem; }
+.letters__empty {
+  border: 1px dashed var(--border-light); padding: 22px; text-align: center;
+  color: var(--muted-fg); font-size: .9rem;
+}
+.letters__embed { margin-top: 32px; }
+.letters__embed h3 {
+  font-family: var(--font-mono); font-size: .72rem; letter-spacing: .16em;
+  text-transform: uppercase; font-weight: 500; margin: 0 0 12px;
+  padding-top: 16px; border-top: 1px solid var(--border-light);
+}
+
+/* ---------- 12. 资源库 ---------- */
 .res-cat { margin: 0 0 12px; scroll-margin-top: calc(var(--header-h) + 24px); }
 .res-cat > h2 { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
 .res-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr)); gap: 0; }
@@ -659,7 +720,7 @@ canvas { max-width: 100%; filter: grayscale(1); }
 .res-item .res-desc { font-size: .9rem; color: var(--muted-fg); margin: 6px 0 0; line-height: 1.7; }
 .res-item .res-tags { margin-top: 10px; display: flex; gap: 6px; flex-wrap: wrap; }
 
-/* ---------- 12. 热线 ---------- */
+/* ---------- 13. 热线 ---------- */
 .hotline {
   display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;
   border-top: 1px solid var(--border-light); padding: 18px 0;
@@ -668,7 +729,7 @@ canvas { max-width: 100%; filter: grayscale(1); }
 .hotline .num { font-family: var(--font-display); font-size: 1.9rem; line-height: 1.1; letter-spacing: -.02em; }
 .hotline .meta { font-size: .88rem; color: var(--muted-fg); }
 
-/* ---------- 13. 页脚与浮层 ---------- */
+/* ---------- 14. 页脚与浮层 ---------- */
 .site-footer { border-top: 8px solid var(--border); margin-top: 80px; }
 .footer__inner {
   max-width: var(--grid-max); margin: 0 auto; padding: 48px var(--pad-x) 32px;
@@ -704,7 +765,7 @@ canvas { max-width: 100%; filter: grayscale(1); }
 }
 .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-/* ---------- 14. 打印 ---------- */
+/* ---------- 15. 打印 ---------- */
 .print-area { display: none; }
 body.printing-area .site-header,
 body.printing-area .md-sidebar,
@@ -718,7 +779,7 @@ body.printing-area::before, body.printing-area::after { display: none; }
   body { padding-top: 0; background: #fff; color: #000; font-size: 11.5pt; }
   body::before, body::after { display: none; }
   .site-header, .md-sidebar, .site-footer, .back-top,
-  .md-actions, .md-prevnext, .signoff, .md-breadcrumbs, .tool-head .btn { display: none !important; }
+  .md-actions, .md-prevnext, .signoff, .md-breadcrumbs, .letters, .tool-head .btn { display: none !important; }
   .md-container { display: block; padding: 0; max-width: none; }
   .md-main { padding: 0; }
   .md-content h1 { font-size: 24pt; }
@@ -729,7 +790,7 @@ body.printing-area::before, body.printing-area::after { display: none; }
   a { color: #000; border: 0; }
 }
 
-/* ---------- 15. 响应式 ---------- */
+/* ---------- 16. 响应式 ---------- */
 @media (max-width: 1180px) {
   .md-container { grid-template-columns: var(--nav-w) minmax(0, 1fr); }
   .md-sidebar--secondary { display: none; }

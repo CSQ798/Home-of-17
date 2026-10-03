@@ -167,10 +167,69 @@
       '<a href="mailto:' + esc(window.SITE.email) + '">' + esc(window.SITE.email) + '</a></p></footer>';
   }
 
+  /* ---------------- 读者想说 ---------------- */
+  function lettersHtml() {
+    var L = window.LETTERS;
+    if (!L) return '';
+
+    var wall = (L.letters && L.letters.length)
+      ? L.letters.map(function (l) {
+        return '<article class="letter">' +
+          '<header class="letter__meta">' +
+          '<span class="letter__name">' + esc(l.name || '匿名') + '</span>' +
+          (l.date ? '<time class="letter__date">' + esc(l.date) + '</time>' : '') +
+          '</header>' +
+          '<p class="letter__text">' + inline(l.text) + '</p>' +
+          (l.reply ? '<p class="letter__reply"><span class="letter__reply-label">作者回复</span>' +
+            inline(l.reply) + '</p>' : '') +
+          '</article>';
+      }).join('')
+      : '<p class="letters__empty">' + esc(L.wallEmpty) + '</p>';
+
+    return '<section class="letters" id="letters" data-letters>' +
+      '<h2 id="letters-title">' + esc(L.title) + '</h2>' +
+      '<p class="letters__lead">' + inline(L.lead) + '</p>' +
+
+      '<div class="letters__prompts">' +
+      '<p class="letters__prompts-title">' + esc(L.promptsTitle) + '</p>' +
+      '<ul>' + (L.prompts || []).map(function (p) { return '<li>' + inline(p) + '</li>'; }).join('') + '</ul>' +
+      '</div>' +
+
+      '<form class="letters__form" data-lt-form novalidate>' +
+      '<div class="field"><label for="ltName">' + esc(L.signLabel) + '</label>' +
+      '<input type="text" id="ltName" maxlength="24" autocomplete="off" placeholder="' + esc(L.signPlaceholder) + '"></div>' +
+      '<div class="field"><label for="ltText">' + esc(L.textLabel) + '</label>' +
+      '<textarea id="ltText" rows="6" maxlength="1500" placeholder="' + esc(L.textPlaceholder) + '"></textarea></div>' +
+      '<div class="btn-row">' +
+      '<button class="btn btn-sm btn-primary" type="button" data-lt="save">' + esc(L.saveBtn) + '</button>' +
+      '<button class="btn btn-sm" type="button" data-lt="mail">' + esc(L.mailBtn) + '</button>' +
+      '<button class="btn btn-sm btn-ghost" type="button" data-lt="copy">' + esc(L.copyBtn) + '</button>' +
+      '<button class="btn btn-sm btn-ghost" type="button" data-lt="clear">' + esc(L.clearBtn) + '</button>' +
+      '</div></form>' +
+
+      '<p class="letters__note">' + inline(L.note) +
+      '　也可以直接写信到 <a href="mailto:' + esc(window.SITE.email) + '?subject=' +
+      encodeURIComponent('读者想说｜Home of 17.') + '">' + esc(window.SITE.email) + '</a></p>' +
+
+      '<div class="letters__mine" data-lt-mine hidden>' +
+      '<h3>' + esc(L.mineTitle) + ' <span class="chip" data-lt-count>0</span></h3>' +
+      '<p class="letters__mine-note">' + esc(L.mineNote) + '</p>' +
+      '<div class="letters__list" data-lt-list></div>' +
+      '</div>' +
+
+      '<h3 class="letters__wall-title">' + esc(L.wallTitle) + '</h3>' +
+      '<p class="letters__wall-note">' + esc(L.wallNote) + '</p>' +
+      '<div class="letters__wall" data-lt-wall>' + wall + '</div>' +
+
+      '<div class="letters__embed" data-comments hidden></div>' +
+      '</section>';
+  }
+
   function pageWrap(body, pageId, opts) {
     opts = opts || {};
     return '<article class="md-content" data-page="' + esc(pageId || '') + '">' +
       '<nav class="md-breadcrumbs" data-crumb aria-label="位置"></nav>' + body +
+      (opts.noLetters ? '' : lettersHtml()) +
       (opts.noSignoff ? '' : signoffHtml()) +
       '<nav class="md-prevnext" data-prevnext aria-label="翻页"></nav></article>';
   }
@@ -286,7 +345,7 @@
       '<p>状态记录、复盘、清单勾选、任务清单等数据都存放在本浏览器，换设备不会同步，建议定期导出备份。</p>' +
       '<div class="btn-row"><button class="btn btn-sm" type="button" id="exportAll">导出全部数据（JSON）</button>' +
       '<button class="btn btn-sm btn-danger" type="button" id="clearAll">清空全部记录</button></div>',
-      'tools');
+      'tools', { noLetters: true });
   }
 
   function toolPageHtml(id) {
@@ -298,7 +357,7 @@
       '<p class="tool-note">' + esc(t.note) + '</p>' +
       (window.TOOLVIEWS && window.TOOLVIEWS[id] ? window.TOOLVIEWS[id]() : '<div class="empty">工具加载中…</div>') +
       '<div class="md-actions"><a class="btn btn-sm btn-ghost" href="#/tools">← 全部工具</a></div>',
-      'tools/' + id);
+      'tools/' + id, { noLetters: true });
   }
 
   /* ---------------- 资源库 ---------------- */
@@ -351,7 +410,7 @@
           '<div class="meta">' + esc(x.meta) + '</div></div>' +
           '<a class="btn btn-sm" href="tel:' + esc(x.tel) + '">拨打</a></div>';
       }).join('') +
-      '<p class="tiny muted">' + h.notes.map(esc).join('　') + '</p>', 'help');
+      '<p class="tiny muted">' + h.notes.map(esc).join('　') + '</p>', 'help', { noLetters: true });
   }
 
   /* ---------------- 关于 ---------------- */
@@ -368,7 +427,7 @@
 
   function notFound(msg) {
     return pageWrap('<h1>页面不存在</h1><p class="lead-xl">' + esc(msg || '没有找到这个页面。') + '</p>' +
-      '<p><a class="btn btn-primary" href="#/home">回到首页</a></p>', '404', { noSignoff: true });
+      '<p><a class="btn btn-primary" href="#/home">回到首页</a></p>', '404', { noSignoff: true, noLetters: true });
   }
 
   /* ---------------- 搜索索引 ---------------- */

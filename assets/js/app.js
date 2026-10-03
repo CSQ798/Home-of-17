@@ -260,6 +260,7 @@
       }
     }
     initChecklists(main);
+    initLetters(main);
     updateBackTop();
   }
 
@@ -344,11 +345,161 @@
     var art = document.querySelector('.md-content');
     if (!art) return;
     var clone = art.cloneNode(true);
-    ['.md-actions', '[data-prevnext]', '.signoff', '.md-breadcrumbs'].forEach(function (sel) {
+    ['.md-actions', '[data-prevnext]', '.signoff', '.md-breadcrumbs', '.letters'].forEach(function (sel) {
       var n = clone.querySelector(sel); if (n) n.remove();
     });
     window.printHtml('<h1>' + esc(b.dataset.print) + '</h1>' + clone.innerHTML);
   });
+
+  /* ---------------- 读者想说 ---------------- */
+  var LT_KEY = 'letters.mine';
+  var LT_DRAFT = 'letters.draft';
+
+  function loadScript(src, cb) {
+    var s = document.createElement('script');
+    s.src = src;
+    s.async = true;
+    s.onload = cb;
+    s.onerror = function () { window.toast('留言组件加载失败'); };
+    document.body.appendChild(s);
+  }
+
+  function commentsEmbed(box) {
+    var c = window.COMMENTS || {};
+    var el = box.querySelector('[data-comments]');
+    if (!el || !c.provider) return;
+    var cfg = c[c.provider] || {};
+    var ready = (c.provider === 'twikoo' && cfg.envId) ||
+                (c.provider === 'giscus' && cfg.repo) ||
+                (c.provider === 'waline' && cfg.serverURL);
+    if (!ready) return;
+    el.hidden = false;
+    el.innerHTML = '<h3>大家的留言</h3><div data-comment-host></div>';
+    var host = el.querySelector('[data-comment-host]');
+
+    if (c.provider === 'twikoo') {
+      loadScript(cfg.cdn || 'https://cdn.jsdelivr.net/npm/twikoo@1.6.44/dist/twikoo.min.js', function () {
+        if (!window.twikoo) return;
+        window.twikoo.init({ envId: cfg.envId, el: host, path: location.hash || '/' });
+      });
+    } else if (c.provider === 'waline') {
+      loadScript('https://unpkg.com/@waline/client@v3/dist/waline.js', function () {
+        if (!window.initWaline) return;
+        window.initWaline({ el: host, serverURL: cfg.serverURL, path: location.hash || '/', dark: 'html[data-theme="dark"]' });
+      });
+    } else if (c.provider === 'giscus') {
+      var s = document.createElement('script');
+      s.src = 'https://giscus.app/client.js';
+      s.async = true; s.crossOrigin = 'anonymous';
+      var attrs = {
+        'data-repo': cfg.repo, 'data-repo-id': cfg.repoId,
+        'data-category': cfg.category, 'data-category-id': cfg.categoryId,
+        'data-mapping': cfg.mapping || 'pathname',
+        'data-theme': document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light',
+        'data-lang': cfg.lang || 'zh-CN', 'data-reactions-enabled': '1'
+      };
+      Object.keys(attrs).forEach(function (k) { s.setAttribute(k, attrs[k]); });
+      host.appendChild(s);
+    }
+  }
+
+  function initLetters(scope) {
+    var box = scope.querySelector('[data-letters]');
+    if (!box) return;
+    var nameEl = box.querySelector('#ltName');
+    var textEl = box.querySelector('#ltText');
+    var mine = box.querySelector('[data-lt-mine]');
+    var listEl = box.querySelector('[data-lt-list]');
+    var countEl = box.querySelector('[data-lt-count]');
+
+    function mineAll() { return Store.load(LT_KEY, []); }
+    function today() {
+      var d = new Date();
+      return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
+    }
+    function fullText() {
+      var n = (nameEl.value || '').trim();
+      var t = (textEl.value || '').trim();
+      return '【署名】' + (n || '匿名') + '\n\n' + t + '\n\n—— 来自 Home of 17.（' + today() + '）';
+    }
+
+    function renderMine() {
+      var all = mineAll();
+      countEl.textContent = all.length;
+      mine.hidden = all.length === 0;
+      listEl.innerHTML = all.slice().reverse().map(function (item, i) {
+        var idx = all.length - 1 - i;
+        return '<article class="letter letter--mine">' +
+          '<header class="letter__meta">' +
+          '<span class="letter__name">' + esc(item.name || '匿名') + '</span>' +
+          '<time class="letter__date">' + esc(item.date) + '</time>' +
+          '<button class="btn btn-sm btn-danger" type="button" data-lt-del="' + idx + '">删除</button>' +
+          '</header>' +
+          '<p class="letter__text">' + esc(item.text) + '</p></article>';
+      }).join('');
+      Array.prototype.forEach.call(listEl.querySelectorAll('[data-lt-del]'), function (b) {
+        b.onclick = function () {
+          var a = mineAll();
+          a.splice(+b.dataset.ltDel, 1);
+          Store.save(LT_KEY, a);
+          renderMine();
+          window.toast('已删除');
+        };
+      });
+    }
+
+    /* 草稿自动保存：换页或误关也不丢 */
+    var d = Store.load(LT_DRAFT, null);
+    if (d) { nameEl.value = d.name || ''; textEl.value = d.text || ''; }
+    function saveDraft() { Store.save(LT_DRAFT, { name: nameEl.value, text: textEl.value }); }
+    nameEl.addEventListener('input', saveDraft);
+    textEl.addEventListener('input', saveDraft);
+
+    box.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-lt]');
+      if (!b) return;
+      var act = b.dataset.lt;
+      var t = (textEl.value || '').trim();
+
+      if (act === 'save') {
+        if (!t) { window.toast('先写点什么吧'); textEl.focus(); return; }
+        var all = mineAll();
+        all.push({ name: (nameEl.value || '').trim() || '匿名', date: today(), text: t });
+        Store.save(LT_KEY, all);
+        renderMine();
+        window.toast('已保存，出现在下面「我写过的」里');
+        mine.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        return;
+      }
+
+      if (act === 'mail') {
+        if (!t) { window.toast('先写点什么吧'); textEl.focus(); return; }
+        var url = 'mailto:' + window.SITE.email +
+          '?subject=' + encodeURIComponent('读者想说｜Home of 17.') +
+          '&body=' + encodeURIComponent(fullText());
+        if (url.length > 1800) { window.toast('内容较长，建议用「复制内容」再粘贴到邮件里'); }
+        location.href = url;
+        window.toast('正在打开你的邮件应用……没有反应就点「复制内容」');
+        return;
+      }
+
+      if (act === 'copy') {
+        if (!t) { window.toast('先写点什么吧'); textEl.focus(); return; }
+        window.copyText(fullText());
+        return;
+      }
+
+      if (act === 'clear') {
+        nameEl.value = ''; textEl.value = '';
+        Store.del(LT_DRAFT);
+        window.toast('已清空（下面已保存的内容还在）');
+        textEl.focus();
+      }
+    });
+
+    renderMine();
+    commentsEmbed(box);
+  }
 
   /* ---------------- 清单持久化 ---------------- */
   function initChecklists(scope) {
