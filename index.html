@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home of 17.</title>
+<meta name="description" content="写给高中生的四件事：过程永远比结果更重要，摒弃功利化、学会慢下来，要有长远的眼光，弄明白你为什么学习。">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' fill='white'/><rect x='1.5' y='1.5' width='61' height='61' fill='none' stroke='black' stroke-width='3'/><text x='32' y='44' font-family='Georgia,serif' font-size='30' text-anchor='middle' fill='black'>17.</text></svg>">
+<!--
+  字体：默认使用本机字体（Georgia / 宋体 / Consolas），保证离线与国内网络下都能正常显示。
+  如果你能访问 Google Fonts，可以取消下面这行的注释来启用 Playfair Display / Source Serif 4 / JetBrains Mono：
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&family=JetBrains+Mono:wght@400;500&display=swap">
+-->
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">跳到主要内容</a>
+
+<!-- ============ 顶栏 ============ -->
+<header class="site-header">
+  <div class="header__inner">
+    <button class="icon-btn" id="menuBtn" type="button" aria-label="展开导航" aria-expanded="false">
+      <span class="bars" aria-hidden="true"></span>
+    </button>
+
+    <a class="brand" href="#/home">
+      <span class="brand__mark">Home of 17.</span>
+      <span class="brand__sub">写给高中生的四件事</span>
+    </a>
+
+    <div class="md-search" id="searchWrap">
+      <input id="searchInput" type="search" placeholder="搜索" autocomplete="off"
+             aria-label="搜索" aria-expanded="false" role="combobox" aria-controls="searchOutput">
+      <kbd class="md-search__kbd">/</kbd>
+      <div class="md-search__output" id="searchOutput" role="listbox" hidden>
+        <div class="md-search__scroll" id="searchResults"></div>
+      </div>
+    </div>
+
+    <button class="text-btn" id="themeBtn" type="button" title="切换深浅色">DARK</button>
+  </div>
+</header>
+
+<div class="md-scrim" id="scrim" hidden></div>
+
+<!-- ============ 主体三栏 ============ -->
+<div class="md-container">
+
+  <aside class="md-sidebar md-sidebar--primary" id="sidebar" aria-label="目录导航">
+    <div class="md-sidebar__scroll">
+      <nav class="md-nav" id="navTree"></nav>
+    </div>
+  </aside>
+
+  <main class="md-main" id="main" tabindex="-1"></main>
+
+  <aside class="md-sidebar md-sidebar--secondary" id="tocSidebar" aria-label="本页目录"></aside>
+</div>
+
+<!-- ============ 页脚 ============ -->
+<footer class="site-footer">
+  <div class="footer__inner">
+    <div class="footer__col">
+      <p class="footer__mark">Home of 17.</p>
+      <p>过程比结果重要 · 别被功利心牵着走 · 把眼光放长 · 弄明白为什么学习</p>
+    </div>
+    <div class="footer__col">
+      <p>联系作者：<a href="mailto:1876148307@qq.com">1876148307@qq.com</a></p>
+      <p>本站为个人整理的学习与成长材料，欢迎来信讨论、指正。</p>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>© 2026 Home of 17.</span>
+    <a href="#/about">关于本站</a>
+    <a href="#/help">需要帮助时</a>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop" type="button" title="回到顶部" aria-label="回到顶部" hidden>↑</button>
+
+<div id="printArea" class="print-area" aria-hidden="true"></div>
+<div class="toast" id="toast" hidden></div>
+
+<script src="assets/js/data-content.js"></script>
+<script src="assets/js/data-content2.js"></script>
+<script src="assets/js/data-library.js"></script>
+<script src="assets/js/render.js"></script>
+<script src="assets/js/tools.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
