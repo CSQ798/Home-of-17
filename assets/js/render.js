@@ -301,8 +301,7 @@
     var groups = mod.groups.map(function (g) {
       var cards = cardsHtml(g.articles.map(function (a) {
         return {
-          title: a.title, desc: a.lead, href: '#/' + mod.id + '/' + a.id,
-          meta: [{ text: '约 ' + (a.minutes || 5) + ' 分钟', brand: true }]
+          title: a.title, desc: a.lead, href: '#/' + mod.id + '/' + a.id
         };
       }));
       if (single) return cards;
@@ -323,8 +322,7 @@
   function articleHtml(mod, group, article) {
     article._uid = mod.id + '-' + article.id;
     var chips = '<div class="md-chips">' +
-      '<span class="chip chip-brand">第 ' + esc(mod.numeral) + ' 章 · ' + esc(mod.title) + '</span>' +
-      '<span class="chip">约 ' + (article.minutes || 5) + ' 分钟</span></div>';
+      '<span class="chip chip-brand">第 ' + esc(mod.numeral) + ' 章 · ' + esc(mod.title) + '</span></div>';
 
     return pageWrap(
       '<h1>' + esc(article.title) + '</h1>' +
