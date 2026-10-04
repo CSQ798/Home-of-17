@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    Home of 17. —— 应用层：路由、导航树、本页目录、搜索、主题
    ========================================================================== */
 (function () {
@@ -193,10 +193,10 @@
       html = R.homeHtml(); navKey = 'home';
     } else if (root === 'preface') {
       html = R.prefaceHtml(); title = '作者想说的话'; navKey = 'preface';
-    } else if (['why', 'process', 'slow', 'long', 'practice'].indexOf(root) >= 0) {
+    } else if (R.getModule(root)) {
+      /* 模块 id 不再写死：以后新增章节会自动生效 */
       var mod = R.getModule(root);
-      if (!mod) { html = R.notFound(); }
-      else if (!sub) { html = R.moduleHtml(mod); title = R.moduleLabel(mod); navKey = mod.id; }
+      if (!sub) { html = R.moduleHtml(mod); title = R.moduleLabel(mod); navKey = mod.id; }
       else {
         var found = R.getArticle(mod, sub);
         if (!found) { html = R.notFound('没有找到这一篇'); }

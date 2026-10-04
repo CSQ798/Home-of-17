@@ -1,4 +1,4 @@
-﻿/* ==========================================================================
+/* ==========================================================================
    Home of 17. —— 渲染层
    ========================================================================== */
 (function () {
@@ -302,8 +302,7 @@
       var cards = cardsHtml(g.articles.map(function (a) {
         return {
           title: a.title, desc: a.lead, href: '#/' + mod.id + '/' + a.id,
-          meta: (a.tags || []).map(function (t) { return { text: t }; })
-            .concat([{ text: '约 ' + (a.minutes || 5) + ' 分钟', brand: true }])
+          meta: [{ text: '约 ' + (a.minutes || 5) + ' 分钟', brand: true }]
         };
       }));
       if (single) return cards;
@@ -325,7 +324,6 @@
     article._uid = mod.id + '-' + article.id;
     var chips = '<div class="md-chips">' +
       '<span class="chip chip-brand">第 ' + esc(mod.numeral) + ' 章 · ' + esc(mod.title) + '</span>' +
-      (article.tags || []).map(function (t) { return '<span class="chip">' + esc(t) + '</span>'; }).join('') +
       '<span class="chip">约 ' + (article.minutes || 5) + ' 分钟</span></div>';
 
     return pageWrap(
