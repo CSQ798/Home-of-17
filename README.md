@@ -1,8 +1,11 @@
-﻿# Home of 17.
+# Home of 17.
 
 写给高中生的六件事：**过程永远比结果更重要 · 摒弃功利化的思想、学会慢下来 · 要有长远的眼光 · 弄明白你为什么学习 · 不嫉妒也不崇拜天赋 · 至人只是常。**
 
 一个纯静态的个人站点（零依赖、零构建，双击即可打开），采用 MkDocs Material 式的文档结构 + **Minimalist Monochrome**（黑白编辑风）视觉系统：左侧常驻导航树、中间正文、右侧本页目录，顶部搜索，底部翻页。
+
+**线上地址：<https://csq798.github.io/Home-of-17/>**（GitHub Pages，仓库 `CSQ798/Home-of-17`，来源 = 分支 `main` + 根目录）
+备用地址：<https://homeof17.pages.dev/>（Cloudflare Pages，需要重新部署一次才是最新内容）
 
 ---
 
