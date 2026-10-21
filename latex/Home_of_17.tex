@@ -1,0 +1,1992 @@
+% !TEX program = xelatex
+% Generated from 书稿.json. Compile with XeLaTeX.
+% Source date: 2026-10-11
+% Source hashes: {'data-content.js': '9f3399906617dee4', 'data-content2.js': 'f7a6dac4b7dcf553', 'data-library.js': 'feeab90056ec3135'}
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[UTF8,fontset=windows]{ctex}
+\setCJKfamilyfont{songpaper}[AutoFakeBold=2.5]{SimSun}
+\renewcommand{\songti}{\CJKfamily{songpaper}}
+\renewcommand{\heiti}{\songti}
+\renewcommand{\kaishu}{\songti}
+\renewcommand{\fangsong}{\songti}
+\usepackage[a4paper,top=25mm,bottom=25mm,left=28mm,right=28mm]{geometry}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{ragged2e}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{needspace}
+\usepackage{xurl}
+\usepackage{amssymb}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage[hidelinks,bookmarksnumbered,bookmarksopen]{hyperref}
+
+\AtBeginDocument{\fontsize{9pt}{12.5pt}\selectfont}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0pt}
+\setlength{\abovedisplayskip}{0pt}
+\setlength{\belowdisplayskip}{0pt}
+\renewcommand{\arraystretch}{1.03}
+\setlist[itemize]{leftmargin=1.8em,labelsep=0.35em,itemsep=1pt,topsep=2pt,partopsep=0pt,parsep=0pt}
+\setlist[enumerate]{leftmargin=2.1em,labelsep=0.35em,itemsep=1pt,topsep=2pt,partopsep=0pt,parsep=0pt}
+\setlist[description]{leftmargin=2.1em,itemsep=1pt,topsep=2pt,partopsep=0pt,parsep=0pt}
+\emergencystretch=2em
+
+\pagestyle{plain}
+
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{0}
+\renewcommand{\contentsname}{目录}
+\renewcommand{\abstractname}{摘要}
+
+\titleformat{\section}
+  {\fontsize{13pt}{16pt}\selectfont\bfseries}
+  {}{0pt}{}
+\titlespacing*{\section}{0pt}{11pt}{4pt}
+\titleformat{\subsection}
+  {\fontsize{10.5pt}{14pt}\selectfont\bfseries}
+  {}{0pt}{}
+\titlespacing*{\subsection}{0pt}{8pt}{2pt}
+
+\setlength{\cftbeforesecskip}{2.5pt}
+\setlength{\cftbeforesubsecskip}{0pt}
+\setlength{\cftsecindent}{0pt}
+\setlength{\cftsubsecindent}{1.8em}
+\renewcommand{\cftsecfont}{\bfseries}
+\renewcommand{\cftsecpagefont}{\normalfont}
+\renewcommand{\cftsubsecfont}{\normalfont}
+\renewcommand{\cftsubsecpagefont}{\normalfont}
+
+\renewenvironment{quote}
+  {\list{}{\leftmargin=1.5em\rightmargin=1em\topsep=2pt\parsep=0pt\itemsep=0pt}\item\relax}
+  {\endlist}
+
+\newcommand{\internalheading}[1]{%
+  \par\needspace{2.5\baselineskip}\vspace{0.35\baselineskip}%
+  \noindent{\bfseries #1}\par\vspace{0.08\baselineskip}}
+\newcommand{\articleheading}[1]{%
+  \par\needspace{4\baselineskip}\phantomsection%
+  \subsection*{#1}\addcontentsline{toc}{subsection}{#1}%
+  }
+\newcommand{\chapterheading}[2]{%
+  \par\needspace{5\baselineskip}\phantomsection%
+  \section*{#1}\addcontentsline{toc}{section}{#1}%
+  }
+
+\begin{document}
+\title{\songti\bfseries\fontsize{18pt}{22pt}\selectfont Home of 17.\\[2pt]
+  \fontsize{12pt}{16pt}\selectfont 写给高中生的六件事}
+\author{\songti 陈思齐}
+\date{\songti 2026 年 10 月 4 日}
+\maketitle
+
+\begin{abstract}
+本文从高中阶段的学习与成长经验出发，讨论为何学习、过程与结果、慢下来、长期眼光、天赋以及“普通”生活等问题，并把这些思考落到与父母沟通、朋友关系、手机使用、睡眠安排和时间管理等具体处境中。文章主张将注意力从不可控的结果转向可控的过程，借助复盘、目标拆分、长期记录和自我观察形成稳定习惯；同时通过自助工具、阅读资源和求助渠道补充实践路径，意在为高中生及其家长提供一份兼顾认识与行动的成长参考。
+\par\vspace{2pt}
+\noindent\textbf{关键词：}高中生；学习动机；过程管理；长期主义；成长教育
+\end{abstract}
+
+\clearpage
+\tableofcontents
+\clearpage
+
+\chapterheading{卷首　作者想说的话}{作者想说的话}
+{\kaishu 这一页留给我自己，也留给愿意读完它的你。}\par
+
+{\kaishu\small （2026 年 9 月）}\par
+
+我十七岁的时候，没有人告诉我这些事。
+
+那时候我以为高中就是一场漫长的排队：谁跑得快，谁就能站到前面。所有的努力都指向一个数字，所有的情绪都跟着那个数字起落。没有人问我“你为什么学”，只问我“考了多少”。
+
+后来我才慢慢明白，那三年真正塑造我的，是一些当时根本没被计分的东西：把一件事从头做完的耐心，看不懂就再来一遍的习惯，在所有人都着急的时候还能安静下来的能力，以及几个到现在还在联系的朋友。
+
+所以有了这个网站。它写的是六件事——
+
+\begin{enumerate}
+\item \textbf{过程永远比结果更重要。}结果只是过程的一张快照，而你能掌控的从来只有过程。
+\item \textbf{别被功利心牵着走。}在一个什么都讲“有用”的时代，学会慢下来，学会做一些“无用”的事。
+\item \textbf{把眼光放长。}不要为了眼前的短期利益，去消耗那些真正陪你走很久的东西。
+\item \textbf{弄明白你为什么学习。}高中三年能给你的，远不止一张录取通知书。
+\item \textbf{不嫉妒别人的天赋，也不在意识里崇拜它。}愿意努力，本身就是一种天赋。
+\item \textbf{至人只是常。}真正厉害的人，看起来往往很平常；不必活成传奇。
+\end{enumerate}
+
+\begin{quote}
+\kaishu
+\noindent\textbf{我想说的其实是}\quad
+如果你读完之后，只记得一句话，我希望是这句：\textbf{你不是在为一个分数活着，你是在长成一个能理解世界、也能把事情做成的人。}
+\end{quote}
+
+\internalheading{写在九月十三日}
+四个月前的这个时候，我在做题。
+
+世界那时候很小，小到只有一张桌子的宽度。抬头是倒计时，低头是错题本。窗外的树是哪一天绿的，我不知道。
+
+今天下午，我坐在从徐汇开往闵行的班车上。上海交大人工智能学院的开学典礼刚散场，手里是学校送给我的生日饮品，杯壁上的水珠一路往下淌。窗外徐家汇的霓虹亮得很整齐，骑手在车流的缝里赶时间——他们的一天还没有结束。车上的同学在讨论技术、讨论选课、讨论四年后要去的方向；前排两个刚从远方来的人举着手机，把这片明亮装进取景框。
+
+我把耳机里的歌按了暂停。
+
+窗外那个奔波的身影，和车里那些关于未来的谈话，就这么叠在了一起。我忽然又想起那些从高中起就缠着我的词：社会、人民、公平。它们太大，大到每一次认真提起都显得不合时宜。有一段时间我以为自己已经理解它们了。现在我知道，我只是挨着它们生活过，还没有真正走进去。
+
+四个月并不长。分数出来，志愿填完，通知书到了，暑假过去了。可是坐在车上这一刻，我很清楚：我和四个月前那个人，已经不太一样了。
+
+四个月前我手里全是公式，脑子里没有别的东西。现在公式忘得差不多了，倒是学会了一件很小的事——看见一个人的时候，先想他今天过得怎么样。
+
+我没有什么了不起的能力。我能做的只是一些几乎可以忽略的事：为陌生人的处境难过，并且没办法说服自己“这和我没关系”。这种敏感有时候让人很累，我也不觉得它值得夸耀。但如果我的存在要有意义，如果我这辈子要做的事情背后有一个共同的指向，那大概是同一件事——\textbf{让别人的日子好过一点，尤其是那些日子本来就不好过的人。}
+
+所以有了这个网站。
+
+十七岁那年没有人跟我说过的话，我想替那时候的自己，说给现在的你听。我在那三年里撞过的墙、想通的事、绕回来的弯路，都写在这里了。它讲的不只有分数，也讲另外一些同样要紧的事：\textbf{愿意努力，本身就是一种天赋；真正厉害的人，看起来往往很平常。}
+
+如果你正在那三年里，我希望你少撞几次。如果你已经走过去了，希望你回头看一眼的时候，能对自己宽容一点。
+
+—— 2026 年 9 月 13 日，于徐汇开往闵行的班车上
+
+（这一页我会一直改。有想法、有不同意见，或者想说说你自己的经验，欢迎写在最后的「读者想说」里，或者直接写信给我。）
+
+\chapterheading{六件事}{六件事}
+{\kaishu 写给高中生的六件事}\par
+一个学生写给学生的东西。六件事——关于过程、关于功利心、关于长远的眼光、关于你为什么学，也关于天赋，和“普通”这件事。
+
+\noindent\textbf{I　过程永远比结果更重要}\par
+结果 = 过程 + 运气。你唯一能改进的是过程，所以盯着结果焦虑，是最没有产出的一种努力。
+
+\noindent\textbf{II　摒弃功利化的思想，学会慢下来}\par
+不是每件事都要“有用”。有些东西的价值，恰恰在于它的回报周期很长，长到当下看不出来。
+
+\noindent\textbf{III　要有长远的眼光}\par
+不要为了眼前的一点好处，去透支那些真正陪你走很久的东西：身体、习惯、信任、判断力。
+
+\noindent\textbf{IV　弄明白你为什么学习}\par
+一个理由如果只在考试前有效，它就撑不过三年。高中能给你的，远不止一张录取通知书。
+
+\noindent\textbf{V　不嫉妒天赋，也不崇拜它}\par
+天赋决定你多久能上手，努力决定你能待多久。愿意努力，本身就是一种天赋。
+
+\noindent\textbf{VI　至人只是常}\par
+真正厉害的人，看起来往往很平常。大多数人的一生由几千个普通日子组成，不必活成传奇。
+
+\begin{quote}
+\kaishu 你不是在为一个分数活着，你是在长成一个能理解世界、也能把事情做成的人。
+\end{quote}
+
+\chapterheading{第一章　为什么学}{为什么学}
+{\kaishu\small 先想清楚这件事，其余的努力才有着落}\par
+大部分人的痛苦不是来自学不会，而是来自不知道自己为什么要学。这一章不给你答案，只把问题摆清楚，再给你几种更耐用的理由。
+
+\internalheading{本章篇目}
+{\kaishu 学习的理由　分数之外，这三年真正留下的东西}\par
+\articleheading{高中三年真正留下的东西}
+{\kaishu 多年以后你会发现，函数和文言文大多忘了。但有些东西留下来了，而且一直在用。}\par
+我们习惯用分数来总结高中，因为分数最容易被看见，也最容易被比较。但真正跟你走一辈子的，往往是那些当时看不见、也不算分的东西。
+
+\Needspace{0.58\textheight}
+\internalheading{会过去的，和会留下的}
+\begin{center}
+\begingroup
+\renewcommand{\arraystretch}{1.10}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{>{\RaggedRight\arraybackslash}p{0.380\textwidth}>{\RaggedRight\arraybackslash}p{0.550\textwidth}}
+\toprule
+\textbf{很快会过去的} & \textbf{会一直留下的} \\
+\midrule
+某一个具体的知识点 & 一套学习新东西的方法 \\
+某一次考试的排名 & 遇到难事不逃的习惯 \\
+背下来的答题模板 & 长时间专注一件事的能力 \\
+老师的一句表扬 & 把事情做完、做干净的品格 \\
+和同学的名次比较 & 几段能陪你很久的关系 \\
+一次发挥失常的懊恼 & 知道自己状态好坏、会照顾自己的能力 \\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{center}
+
+\begin{quote}
+\kaishu
+\noindent\textbf{一句话}\quad
+高中给你的不是一张成绩单，而是你处理事情的方式。成绩单会过期，方式不会。
+\end{quote}
+
+\internalheading{一个可以自测的问题}
+如果三年后你手里只有分数，那这三年你是亏的。你可以每学期问自己一次：
+
+\begin{itemize}
+\item 除了分数，我这学期还在积累什么？
+\item 有没有一件我做起来越来越顺手的事？
+\item 我和一年前相比，哪里变得更沉稳了？
+\item 我有没有留下几个能说真话的朋友？
+\end{itemize}
+
+\begin{quote}
+\noindent\textbf{这不是否定成绩}\quad
+分数当然重要，它是你现在能拿到的资源分配方式。但把分数当成唯一目标，会让你在最需要坚持的时候失去理由——因为分数波动太大，它撑不住一个人的三年。
+\end{quote}
+
+把目标从“考多少分”换成“成为一个什么样的人”，你会发现努力这件事突然变得耐用多了。
+
+\articleheading{我们为什么学习：几种常见答案和它们的漏洞}
+{\kaishu “为了考个好大学”“为了父母”“为了以后赚钱”——这些答案不是错的，但它们都有同一个问题：撑不久。}\par
+先别急着往下读，花一分钟写下你自己的答案。多数人写完之后会发现，那个答案经不起三个追问。
+
+\Needspace{0.58\textheight}
+\internalheading{五种常见的答案}
+\begin{center}
+\begingroup
+\renewcommand{\arraystretch}{1.10}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{>{\RaggedRight\arraybackslash}p{0.235\textwidth}>{\RaggedRight\arraybackslash}p{0.280\textwidth}>{\RaggedRight\arraybackslash}p{0.400\textwidth}}
+\toprule
+\textbf{常见答案} & \textbf{它的漏洞} & \textbf{什么时候会崩} \\
+\midrule
+为了考个好大学 & 大学只是中转站，到了之后理由就没了 & 拿到录取通知书之后 \\
+为了父母 / 为了不被骂 & 理由长在别人身上，别人一松手你就停 & 父母不再管、或管不动的时候 \\
+为了以后赚钱 & 太远，换不来今天晚自习的动力 & 枯燥的日常里 \\
+为了不比别人差 & 你的动力取决于别人，你永远在追 & 追不上、或突然超过别人的时候 \\
+因为大家都在学 & 这不是理由，是背景 & 任何一次独处的时候 \\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{center}
+
+\begin{quote}
+\kaishu
+\noindent\textbf{判断标准}\quad
+一个理由，如果只在考试前有效，那它撑不过三年。真正耐用的理由，应该在你一个人、在深夜、在没人看着你的时候依然成立。
+\end{quote}
+
+\internalheading{更耐用的三层理由}
+\begin{description}
+\item[{\textbf{工具层}}] 它能把我送到哪里。比如：学好英语，是为了以后能直接读原版的东西，不必等人翻译。
+\item[{\textbf{精神层}}] 它让我变成什么样的人。比如：把数学啃下来，让我知道自己能对付难的东西。
+\item[{\textbf{趣味层}}] 这件事本身有没有一点意思。比如：生物的机制、历史的因果、几何的漂亮构造。
+\end{description}
+
+三层里，工具层最容易被说服，趣味层最持久。你可以不热爱每一门课，但至少要有一门课让你觉得“这个还挺有意思”。
+
+\internalheading{把话说完整}
+\begin{enumerate}
+\item \textbf{不要说“我不得不学数学”}\quad 这是一种被你默认的说法，它让你觉得自己是受害者。
+\item \textbf{试着说“我选择学数学，因为……”}\quad 把理由补完整。补不出来的科目，说明你还没找到理由，那就先找一个最小的。
+\item \textbf{给它一个具体的画面}\quad “因为我想在报志愿的时候，不被数学卡住。”具体的目标比抽象的口号有力。
+\end{enumerate}
+
+\begin{quote}
+\noindent\textbf{一句提醒}\quad
+如果你的答案是“我也不知道”，那也没关系。承认不知道，比用一个假理由骗自己好。带着这个问题过一学期，答案往往会在某个具体的时刻自己冒出来。
+\end{quote}
+
+\articleheading{三年能给你的精神收获}
+{\kaishu 这些东西不会写在成绩单上，但它们决定你以后能走多远。}\par
+如果有人说“高中就是刷题”，那他描述的只是动作，不是结果。同样三年，有人只带走了题量，有人带走了几种能一直用的能力。
+
+\Needspace{0.90\textheight}
+\internalheading{八件在高中才能长出来的东西}
+\begin{center}
+\begingroup
+\renewcommand{\arraystretch}{1.10}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{>{\RaggedRight\arraybackslash}p{0.380\textwidth}>{\RaggedRight\arraybackslash}p{0.550\textwidth}}
+\toprule
+\textbf{能力} & \textbf{它是在什么时候长出来的} \\
+\midrule
+长期专注 & 在你想刷手机却坚持把这一节看完的那些晚上 \\
+忍受枯燥 & 在重复第三十遍同一类题、并且还愿意找规律的时候 \\
+审慎判断 & 在你不轻信“学霸的方法”，而是先想它适不适合自己的时候 \\
+把事做完的能力 & 在没人催你、你仍然把这份作业收尾的时候 \\
+与人相处 & 在处理一次误会、一次合作、一次分歧的时候 \\
+对自己的了解 & 在一次次考好考砸之后，你开始知道自己什么状态最好 \\
+延迟满足 & 在你想立刻舒服，却选择先做完再休息的时候 \\
+承认不确定 & 在你努力了却没有结果，仍然继续的时候 \\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{center}
+
+\begin{quote}
+\kaishu
+\noindent\textbf{这些能力从哪来}\quad
+它们都不是被“教”会的，而是在具体的事情里、在你一次次选择不逃的时候长出来的。所以真正重要的是：\textbf{你每天在做什么样的选择。}
+\end{quote}
+
+\internalheading{一个反过来的看法}
+很多人把高中当成“忍耐期”——忍过去就好了。但忍耐是被动的，它会让你在结束的那天感到空洞。换个角度：这三年是你人生里少有的、可以集中精力把自己“升级”一遍的时间。没有房租、没有通勤、没有太多必须应付的杂事。这种条件以后很难再有。
+
+\begin{quote}
+\kaishu 一个人的时间花在哪里，是看得出来的。
+\end{quote}
+
+所以别把这三年过得只剩下刷题和排名。在做完该做的事之后，留一点时间给那些“没用”的东西——读一本闲书，写点东西，练一样手艺。它们会在很久以后替你说话。
+
+\articleheading{把“要我学”变成“我要学”}
+{\kaishu 同一件事，被推着做和主动做，体验完全不同。而这件事其实有办法调整。}\par
+“我要学”不是一种天生的性格，更像是一种被自己说服的结果。它来自你给这件事找到了自己的理由。
+
+\internalheading{四个可操作的动作}
+\begin{enumerate}
+\item \textbf{换掉你的说法}\quad 把“我不得不”换成“我选择”。语言不是修辞，它会真的改变你的感受。
+\item \textbf{给每门课找一个“我的理由”}\quad 哪怕很小：英语为了看懂原版电影，化学为了看懂食品配料表。写下来贴在书上。
+\item \textbf{把大目标切成今天的动作}\quad “把数学提上去”太大；“今天做完 3 道错题”刚好。目标太大是拖延的主要来源。
+\item \textbf{自己决定怎么做}\quad 先做哪科、在哪做、做多久，尽量由你定。有选择权的人，才愿意承担结果。
+\end{enumerate}
+
+\begin{quote}
+\kaishu
+\noindent\textbf{关键区别}\quad
+被推着走的人，把学习当成本；主动走的人，把学习当成自己的事。两者的差距不在天赋，在有没有“这是我选的”这层确认。
+\end{quote}
+
+\internalheading{允许自己不喜欢}
+“我要学”不等于“我热爱每一科”。你可以讨厌某一门课，同时依然决定把它学好——这本身就是一种成熟：\textbf{不必喜欢，也能负责。}
+
+\internalheading{这一周可以试的三件事}
+\begin{itemize}
+\item[\(\square\)] 给三门课各写一句“我学它的理由”
+\item[\(\square\)] 每天只给自己定三件必须完成的事，写下来
+\item[\(\square\)] 每周留出一个时间段，自己决定做什么
+\end{itemize}
+
+\chapterheading{第二章　过程比结果更重要}{过程比结果更重要}
+{\kaishu\small 结果只是过程的一张快照}\par
+把注意力放在结果上，你会焦虑；放在过程上，你才有事可做。这一章讲清楚这个道理，也给出具体做法。
+
+\internalheading{本章篇目}
+{\kaishu 过程与结果　看清结果里有多少是运气}\par
+\articleheading{结果只是过程的一张快照}
+{\kaishu 一次考试的结果，是很多因素叠加出来的一个点。你盯着那个点，看不到任何改进的方向。}\par
+结果有一个很坏的属性：它是\textbf{浓缩的}。你一个学期的状态、方法、精力、运气，最后被压缩成一个数字。信息密度太高，反而什么都看不出来。
+
+\Needspace{0.58\textheight}
+\internalheading{一次考试里，哪些是你能控制的}
+\begin{center}
+\begingroup
+\renewcommand{\arraystretch}{1.10}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{>{\RaggedRight\arraybackslash}p{0.235\textwidth}>{\RaggedRight\arraybackslash}p{0.280\textwidth}>{\RaggedRight\arraybackslash}p{0.400\textwidth}}
+\toprule
+\textbf{因素} & \textbf{可控吗} & \textbf{说明} \\
+\midrule
+复习的内容和方式 & 可控 & 你决定练什么、怎么练 \\
+每天投入的时间与状态 & 大部分可控 & 受睡眠、情绪影响，但可以调 \\
+考场上的时间分配 & 可控 & 有方法，也能练 \\
+题目是否见过同类 & 不可控 & 所以要把功夫花在题型上，而不是押题 \\
+当天的身体状态 & 部分可控 & 睡眠和饮食能帮上忙 \\
+阅卷与评分尺度 & 不可控 & 作文分数尤其明显 \\
+别人的水平 & 不可控 & 排名取决于别人，这是最不该盯的东西 \\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{center}
+
+\begin{quote}
+\kaishu
+\noindent\textbf{核心的一句}\quad
+结果 = 过程 + 运气。你只能改进过程，所以\textbf{盯着结果焦虑，是最没有产出的一种努力。}
+\end{quote}
+
+\internalheading{那还要不要看结果}
+要看，但只看它作为“信息”的部分：
+
+\begin{itemize}
+\item 这场考试里，哪一类题我丢了分？
+\item 我的时间分配有没有问题？
+\item 我复习的内容，和考到的内容对得上吗？
+\item 我哪一步的方法明显不对？
+\end{itemize}
+
+问完这四个问题，结果就完成了它的使命。剩下的情绪——懊恼、羞愧、害怕——不是信息，是消耗。
+
+\begin{quote}
+\kaishu 你无法控制风向，但你可以调整帆。
+\end{quote}
+
+\articleheading{分数能衡量什么，不能衡量什么}
+{\kaishu 分数是一种有用的工具，但把它当成对自己的判决，就是用错了工具。}\par
+\internalheading{分数能衡量的}
+\begin{itemize}
+\item 在某个时间点、对某份卷子、你的掌握程度
+\item 你的熟练度与做题速度
+\item 你有没有漏掉某一块内容
+\item 你的应试状态（能不能在限定时间里把会做的做对）
+\end{itemize}
+
+\internalheading{分数不能衡量的}
+\begin{itemize}
+\item 你的理解有多深（有时靠刷题也能提分）
+\item 你的创造力、表达能力、动手能力
+\item 你解决问题时的耐心
+\item 你能不能在没人要求的时候自己往前走
+\item 你会不会和人相处、能不能被人信任
+\item 你未来会变成什么样的人
+\end{itemize}
+
+\begin{quote}
+\kaishu
+\noindent\textbf{换一个说法}\quad
+把“我考了 62 分，我不行”换成“这次卷子显示，我函数这一块没掌握”。前一句是对人的判决，后一句是对事的描述。\textbf{描述可以改，判决只能让人放弃。}
+\end{quote}
+
+\internalheading{一个练习}
+拿到卷子后，先别算总分。按下面这张表过一遍，再去看分数：
+
+\begin{center}
+\begingroup
+\renewcommand{\arraystretch}{1.10}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{>{\RaggedRight\arraybackslash}p{0.380\textwidth}>{\RaggedRight\arraybackslash}p{0.550\textwidth}}
+\toprule
+\textbf{分类} & \textbf{这次我的情况} \\
+\midrule
+本来就会、也做对了 & 说明这部分稳了，可以减少复习时间 \\
+本来就会、但做错了 & 这是最该抓的：是粗心、是时间不够，还是步骤不熟 \\
+本来不会、现在会了 & 这是你这段时间真正的收获 \\
+本来不会、现在还是不会 & 这是下一阶段要补的清单 \\
+超出范围的题 & 不用管它，那不是你的问题 \\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{center}
+
+\begin{quote}
+\noindent\textbf{一句话}\quad
+分数是仪表盘，不是判决书。仪表盘的作用是告诉你下一步往哪走。
+\end{quote}
+
+\articleheading{把注意力放回过程：六件可以做的事}
+{\kaishu 道理讲完了，接下来是具体的。这六件事都能立刻开始，而且不看天赋。}\par
+\begin{enumerate}
+\item \textbf{列一张“只写可控项”的清单}\quad 今天的清单里不出现“考好”，只出现“做完 3 道错题”“背 20 个单词”“11 点前睡”。
+\item \textbf{设过程目标，不设结果目标}\quad “这周把函数这一章的错题过完”比“这周数学要上 100 分”可靠一百倍。
+\item \textbf{记录投入，而不是记录分数}\quad 在日历上记“今天专注了几个 25 分钟”。分数会波动，投入不会骗你。
+\item \textbf{给每次练习留出反馈环节}\quad 做完立刻对答案、写错因。没有反馈的重复，只是在加固错误。
+\item \textbf{把不会的题单独放}\quad 不要求一次弄懂，只要求“记下来，三天内解决”。压力会小很多。
+\item \textbf{每周留 15 分钟回看}\quad 只问两件事：哪件事有效？哪件事白做了？
+\end{enumerate}
+
+\begin{quote}
+\kaishu
+\noindent\textbf{为什么这样有效}\quad
+因为过程是你每天都能碰到的，结果是几个月才来一次的。\textbf{人需要频繁的小反馈才能坚持下去}，而分数给不了这种频率。
+\end{quote}
+
+\internalheading{一个具体的例子}
+两个同学都想提高数学。
+
+\begin{center}
+\begingroup
+\renewcommand{\arraystretch}{1.10}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{>{\RaggedRight\arraybackslash}p{0.235\textwidth}>{\RaggedRight\arraybackslash}p{0.280\textwidth}>{\RaggedRight\arraybackslash}p{0.400\textwidth}}
+\toprule
+\textbf{} & \textbf{A 的做法} & \textbf{B 的做法} \\
+\midrule
+目标 & 下次考到 110 分 & 每天解决 2 道不会的题 \\
+日常 & 焦虑，不知道今天该干什么 & 有明确的当天任务 \\
+反馈 & 要等一个月才知道行不行 & 当天就知道有没有解决 \\
+考后 & 没到 110，崩溃 & 看清单：这一个月解决了 40 道题 \\
+长期 & 容易放弃 & 方法稳定，成绩慢慢上来 \\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{center}
+
+B 不是更聪明，只是把目标放在了能每天摸到的地方。
+
+\internalheading{本周过程清单（勾选会自动保存）}
+\begin{itemize}
+\item[\(\square\)] 每天定三件可完成的具体任务
+\item[\(\square\)] 记录每天的专注时长，不记分数
+\item[\(\square\)] 每天解决 2 道不会的题，并写下错因
+\item[\(\square\)] 睡前把手机放到够不着的地方
+\item[\(\square\)] 周日花 15 分钟回看这一周
+\end{itemize}
+
+\articleheading{考砸之后：从结果回到过程}
+{\kaishu 考砸那天晚上最难熬。这一段不讲大道理，只说那天可以做点什么。}\par
+先承认一件事：难受是正常的。任何人投入了期待，落空之后都会难受。不必急着“想开”，也不用假装无所谓。
+
+\internalheading{当天晚上：只做三件事}
+\begin{enumerate}
+\item \textbf{允许自己难过一会儿}：走一走，洗个澡，或者干脆睡一觉。不要在情绪最高点做任何决定。
+\item \textbf{不要在夜里分析卷子}：凌晨的自我评价基本都不可信，只会在“我不行”和“我完了”之间打转。
+\item \textbf{写下三行}：这次最难受的是什么、我担心什么、明天我打算做的一件小事。写完合上。
+\end{enumerate}
+
+\Needspace{0.58\textheight}
+\internalheading{第二天：把情绪换成信息}
+\begin{center}
+\begingroup
+\renewcommand{\arraystretch}{1.10}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{>{\RaggedRight\arraybackslash}p{0.380\textwidth}>{\RaggedRight\arraybackslash}p{0.550\textwidth}}
+\toprule
+\textbf{不要这样想} & \textbf{换成这样想} \\
+\midrule
+“我根本不是学这个的料” & “这次这块没掌握，我需要换一种学法” \\
+“我完了，高考也没戏了” & “这是一次月考，它只代表这个月” \\
+“我太笨了” & “我的方法或者时间分配出了问题” \\
+“别人都比我强” & “我只看自己的清单有没有往前推” \\
+“我要从明天开始拼命” & “我明天先做完三件小事” \\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{center}
+
+\begin{quote}
+\kaishu
+\noindent\textbf{一个判断标准}\quad
+如果一个想法让你更清楚下一步做什么，它是信息；如果它只是让你更难受，那它是消耗。\textbf{你不需要为消耗你的想法负责，只需要识别它，然后放下。}
+\end{quote}
+
+\internalheading{三天之内，做一次复盘}
+等情绪过去了，用半小时把这次考试拆开看：哪些是知识问题，哪些是方法问题，哪些是状态问题。工具箱里的「考后复盘」可以直接用。
+
+\begin{quote}
+\kaishu 失败不是让你退回原点，它只是让你知道路在哪里拐弯。
+\end{quote}
+
+\chapterheading{第三章　慢下来}{慢下来}
+{\kaishu\small 在一个什么都讲“有用”的时代}\par
+功利心不是坏东西，但它会悄悄替你做决定：读一本书要先问有没有用，交一个朋友要先想有没有帮助。这一章想说的是：有些东西的价值，恰恰在于它“没用”。
+
+\internalheading{本章篇目}
+{\kaishu 慢下来的理由　功利化、无用之用与真正的效率}\par
+\articleheading{功利化是怎么进入我们生活的}
+{\kaishu 它不声不响，却改变了我们做每一件事的动机。}\par
+功利化不是一种观点，更像一种默认设置。它不问你喜不喜欢，只问值不值。
+
+\Needspace{0.58\textheight}
+\internalheading{它长什么样}
+\begin{center}
+\begingroup
+\renewcommand{\arraystretch}{1.10}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{>{\RaggedRight\arraybackslash}p{0.235\textwidth}>{\RaggedRight\arraybackslash}p{0.280\textwidth}>{\RaggedRight\arraybackslash}p{0.400\textwidth}}
+\toprule
+\textbf{场景} & \textbf{功利化的问法} & \textbf{被忽略的东西} \\
+\midrule
+读一本书 & “这本书对提分有用吗？” & 语言的质感、看世界的另一个角度 \\
+选一门课 & “这门课好拿分吗？” & 你真的对什么感兴趣 \\
+交一个朋友 & “和他来往有什么好处？” & 关系本身的温度 \\
+做一件事 & “这能写进简历/自荐信吗？” & 你在做这件事时变成的样子 \\
+过一个假期 & “这个假期我提升了什么？” & 休息本身的意义 \\
+看一场电影 & “浪费时间吧？” & 被一个好故事打动的能力 \\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{center}
+
+\begin{quote}
+\kaishu
+\noindent\textbf{功利心的代价}\quad
+它不会让你立刻变差，但它会让你\textbf{慢慢失去对事情本身的兴趣}。而一个人一旦只会为结果做事，他就很难在漫长的、没有即时回报的事情上坚持下去——比如真正的学习。
+\end{quote}
+
+\internalheading{为什么我们都会这样}
+因为周围所有人都在这么算。排名、分数线、升学率，整个环境都在训练你用“有没有用”来评价一切。这不是你的错，但你可以选择不全部接受。
+
+\internalheading{一个简单的区分}
+\begin{description}
+\item[{\textbf{该功利的}}] 资源分配。时间有限，你必须决定先做哪科、放弃哪些题。这是理性的。
+\item[{\textbf{不该功利的}}] 你对世界的好奇、你与他人的关系、你对自己的要求。这些一旦被算计，就会干枯。
+\end{description}
+
+\begin{quote}
+\noindent\textbf{不是让你放弃效率}\quad
+这一章不反对效率，反对的是\textbf{把效率当成唯一标准}。一件事“效率低”不等于“不值得做”。
+\end{quote}
+
+下次你听到自己心里冒出那句“这有什么用”的时候，试着追问一句：\textbf{我是在分配时间，还是在取消一件本来喜欢的事？}
+
+\articleheading{无用之用}
+{\kaishu 那些看起来没有回报的事，往往在很久以后才显出价值。}\par
+有些事你做了，短期内看不到任何产出：读一本和考试无关的书，写一些没人看的字，走一段没有目的的路。它们不是浪费，它们在替你攒一种看不见的东西。
+
+\Needspace{0.58\textheight}
+\internalheading{几件“没用”但值得的事}
+\begin{center}
+\begingroup
+\renewcommand{\arraystretch}{1.10}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{>{\RaggedRight\arraybackslash}p{0.235\textwidth}>{\RaggedRight\arraybackslash}p{0.280\textwidth}>{\RaggedRight\arraybackslash}p{0.400\textwidth}}
+\toprule
+\textbf{这件事} & \textbf{短期看} & \textbf{长期看} \\
+\midrule
+读闲书 & 占用了刷题时间 & 你的表达、判断、看问题的角度会不同 \\
+练一样和考试无关的手艺 & 和成绩无关 & 你会知道“从不会到会”是什么感觉 \\
+长时间地散步或发呆 & 好像什么都没做 & 很多想不通的事，是在这时候想通的 \\
+认真写点东西 & 不如多背几道题 & 能写清楚的人，以后处处占便宜 \\
+和长辈聊天 & 有点无聊 & 你会提前看到一些人生的样子 \\
+只是安静地待着 & 浪费 & 你需要它，才能不被外界的声音推着走 \\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{center}
+
+\begin{quote}
+\kaishu
+\noindent\textbf{“无用”的真实含义}\quad
+不是真的没有用，而是\textbf{它的回报周期很长，长到在当下的评价体系里显示不出来}。而人生里最重要的那些东西，恰恰都是长周期的。
+\end{quote}
+
+\internalheading{一个反例}
+很多人到了大学才发现：真正让人拉开差距的，不是高中多刷的那几百道题，而是有没有阅读习惯、能不能把想法写清楚、会不会自己找答案。这些恰好都是“没用”的事。
+
+\begin{quote}
+人皆知有用之用，而莫知无用之用也。
+\par\raggedleft\kaishu ——《庄子·人间世》
+\end{quote}
+
+\begin{quote}
+\noindent\textbf{怎么安排}\quad
+不必把时间全押在“无用”上，也别把它清零。给自己留一块地方——每周两个小时，做一件没有产出、但你喜欢的事。
+\end{quote}
+
+这两小时不是奖励，是维护。维护你对世界还保有好奇这件事。
+
+\articleheading{慢不是懒：哪些事必须慢}
+{\kaishu “快”是一种能力，“知道什么时候该慢”是更重要的能力。}\par
+先把两个概念分开：慢不等于拖延，也不等于效率低。慢是指\textbf{在需要时间的环节上，不压缩时间}。
+
+\Needspace{0.58\textheight}
+\internalheading{四件必须慢下来的事}
+\begin{center}
+\begingroup
+\renewcommand{\arraystretch}{1.10}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{>{\RaggedRight\arraybackslash}p{0.235\textwidth}>{\RaggedRight\arraybackslash}p{0.280\textwidth}>{\RaggedRight\arraybackslash}p{0.400\textwidth}}
+\toprule
+\textbf{事} & \textbf{慢下来的样子} & \textbf{快的代价} \\
+\midrule
+理解一个概念 & 自己想一遍，讲一遍，再做题 & 看着答案懂了，一考就废 \\
+读一本书 & 读完想一想它在说什么 & 读完只剩下“我读过了” \\
+一件事做成 & 按步骤走完，允许反复 & 返工，比慢慢做更费时间 \\
+一段关系 & 慢慢了解，允许沉默 & 热闹一阵，然后陌生人 \\
+身体的恢复 & 睡够、吃好、运动 & 欠下的账，用几周的低效来还 \\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{center}
+
+\internalheading{该快的地方也要快}
+\begin{itemize}
+\item 机械重复的抄写、整理，能用工具就用工具
+\item 能一次问清楚的问题，不要自己耗两小时
+\item 会做的题不要反复做，那只是在买安心
+\end{itemize}
+
+\begin{quote}
+\kaishu
+\noindent\textbf{真正的效率}\quad
+不是把所有环节都提速，而是\textbf{把时间花在关键环节上，并把不关键的环节砍掉}。很多人把“慢”的地方加速了，又把“快”的地方拖长了，结果两头都亏。
+\end{quote}
+
+\internalheading{一个判断方法}
+问自己：这件事的价值是在“做完”上，还是在“从里面得到什么”上？
+
+\begin{description}
+\item[{\textbf{价值在“做完”}}] 那就快：交作业、整理笔记、处理杂事。
+\item[{\textbf{价值在“得到什么”}}] 那就慢：理解、记忆、写作、想清楚一件事。
+\end{description}
+
+\articleheading{具体地慢下来：五个动作}
+{\kaishu 不谈心态，只给可以今天就开始的做法。}\par
+\begin{enumerate}
+\item \textbf{每天留一段空白}\quad 30 分钟，不安排任何任务。可以散步、发呆、听音乐。写进日程，像对待一节课那样对待它。
+\item \textbf{一次只做一件事}\quad 做题时不听带歌词的歌，吃饭时不看视频。不是自律问题，是注意力的使用方式问题。
+\item \textbf{每天深度阅读 20 分钟}\quad 读纸书或长文，不读推送。读不懂就慢一点，允许一天只读十页。
+\item \textbf{走路的时候不看手机}\quad 来回学校的路上把手机放包里。这段时间是大脑整理信息的时间。
+\item \textbf{每周留半天“不做有用的事”}\quad 打球、画画、看一部电影、和朋友闲逛。不要把它折算成“放松效率”。
+\end{enumerate}
+
+\begin{quote}
+\kaishu
+\noindent\textbf{慢下来之后会发生什么}\quad
+你不会立刻变强，但你会开始\textbf{分得清哪些事是你真的想做，哪些事只是被推着做}。这个分辨能力，比多刷一套卷子重要得多。
+\end{quote}
+
+\Needspace{0.58\textheight}
+\internalheading{可能会遇到的阻力}
+\begin{center}
+\begingroup
+\renewcommand{\arraystretch}{1.10}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{>{\RaggedRight\arraybackslash}p{0.380\textwidth}>{\RaggedRight\arraybackslash}p{0.550\textwidth}}
+\toprule
+\textbf{阻力} & \textbf{怎么处理} \\
+\midrule
+觉得自己在浪费时间 & 把它写进计划里，它就是计划的一部分，不是偷来的 \\
+同学都在学，心里发慌 & 你的目标不是比别人多做两小时，而是持续三年不走偏 \\
+父母不理解 & 把这段时间做成了什么告诉他们，比如读了什么、想通了什么 \\
+一慢下来就焦虑 & 从 10 分钟开始，先让身体习惯“什么都不做” \\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{center}
+
+\internalheading{本周的“慢”清单（勾选自动保存）}
+\begin{itemize}
+\item[\(\square\)] 每天 30 分钟空白时间
+\item[\(\square\)] 每天 20 分钟深度阅读
+\item[\(\square\)] 至少一次走路不看手机
+\item[\(\square\)] 至少一次完整地听完一首歌或看完一篇文章，不做别的事
+\item[\(\square\)] 留半天做一件没有产出的事
+\end{itemize}
+
+\chapterheading{第四章　长远的眼光}{长远的眼光}
+{\kaishu\small 别为了眼前的一点好处，透支往后的人生}\par
+短期利益最诱人的地方，是它立刻兑现；最危险的地方，也是它立刻兑现。这一章讲的是：哪些东西在长期增值，哪些动作在悄悄折旧。
+
+\internalheading{本章篇目}
+{\kaishu 长期主义　复利、折旧与十年之后的自己}\par
+\articleheading{复利与折旧：什么在长期增值}
+{\kaishu 有些事每天只进步一点点，但十年后会差出很远。}\par
+复利这个词听起来很金融，其实说的是一件很简单的事：\textbf{今天的积累会成为明天的基础}。反过来，折旧就是今天欠下的账，会在以后连本带利地还。
+
+\begin{center}
+\begingroup
+\renewcommand{\arraystretch}{1.10}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{>{\RaggedRight\arraybackslash}p{0.380\textwidth}>{\RaggedRight\arraybackslash}p{0.550\textwidth}}
+\toprule
+\textbf{在增值的} & \textbf{在折旧的} \\
+\midrule
+身体状态：睡眠、运动、饮食 & 熬夜换来的那两小时 \\
+阅读能力：读得越多，读得越快 & 只读碎片信息，长文读不进去 \\
+写作与表达能力 & 长期只做选择题，不会组织语言 \\
+别人对你的信任 & 一次次答应又做不到 \\
+把一件事做到底的经验 & 同时开五件事，每件都半途而废 \\
+理解力：能看懂复杂的东西 & 只背结论，不问为什么 \\
+几个长期的朋友 & 只在需要的时候找人 \\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{center}
+
+\begin{quote}
+\kaishu
+\noindent\textbf{判断标准}\quad
+问一句：\textbf{这件事如果做三年，会把我带到哪里？}如果答案是“和现在差不多，只是更累”，那它就是在折旧。
+\end{quote}
+
+\internalheading{复利为什么难坚持}
+因为它前期的曲线几乎是平的。你读了一个月书，看不出变化；跑了一个月步，体重没怎么动。大多数人在曲线变陡之前就放弃了。
+
+\begin{quote}
+\noindent\textbf{一个现实提醒}\quad
+不要用“复利”给自己找焦虑。它的意思不是“每天都必须有进步”，而是“别做那些会让未来更难的事”。\textbf{不做坏事，比做很多好事更容易坚持。}
+\end{quote}
+
+\begin{quote}
+\kaishu 我们总是高估一年能做的事，低估十年能做的事。
+\end{quote}
+
+\articleheading{短期利益的诱惑和它的账单}
+{\kaishu 每一个“这次先这样”的选择，都在给未来写一张账单。}\par
+短期利益之所以难拒绝，是因为它的好处立刻兑现，而代价要很久以后才来。下面这些场景，你大概都遇到过。
+
+\begin{center}
+\begingroup
+\renewcommand{\arraystretch}{1.10}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{>{\RaggedRight\arraybackslash}p{0.380\textwidth}>{\RaggedRight\arraybackslash}p{0.550\textwidth}}
+\toprule
+\textbf{眼前的好处} & \textbf{以后的账单} \\
+\midrule
+抄一次作业，省下两小时 & 这块知识永远缺一个洞；而且下次更想抄 \\
+只刷套路题，不碰不会的题 & 遇到新题型就崩，因为你没练过“想” \\
+熬夜多刷一套卷子 & 第二天的课听不进去，一周的状态都差 \\
+为了名次，不把方法告诉同学 & 失去讨论的伙伴，也失去讲一遍让自己更懂的机会 \\
+把所有时间都给“能提分”的科目 & 放弃了真正让你有兴趣的方向 \\
+考试前突击，考完就忘 & 三年后手里什么都没有 \\
+和父母硬顶，赌一口气 & 关系变差，之后每一次沟通都更难 \\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{center}
+
+\begin{quote}
+\kaishu
+\noindent\textbf{一个特别好用的问法}\quad
+面对诱惑时问自己：\textbf{这件事的好处，是今天兑现，还是三个月后还留着？}如果只在今天兑现，那它大概率不值得。
+\end{quote}
+
+\internalheading{关于“抄作业”这件事}
+它值得单独说，因为几乎所有高中生都干过。
+
+\begin{itemize}
+\item 如果是“我真的不会，先看看思路，然后自己重做一遍”——这是学习。
+\item 如果是“我不想做，抄完好交差”——你省下的不是两小时，是一次变强的机会，和一点对自己的信任。
+\item 更麻烦的是，它会形成路径：\textbf{第一次抄完之后，你对付困难的方式就多了一个选项。}
+\end{itemize}
+
+\begin{quote}
+\noindent\textbf{不必过度自责}\quad
+如果你已经这么做过很多次，也不用背这个包袱。从今天起，只做一个改动：\textbf{作业可以不会做，但不可以不看。}哪怕只写出前两行。
+\end{quote}
+
+\articleheading{十年之后再看今天}
+{\kaishu 把镜头拉远，很多现在过不去的坎会重新显出比例。}\par
+人很难看清自己正在经历的事情，因为离得太近。有一个简单的办法：把时间尺度拉长。
+
+\internalheading{三个问题}
+\begin{enumerate}
+\item \textbf{10 分钟后，这件事还重要吗}\quad 大多数情绪性的争执、一次小失误，答案是“不重要”。
+\item \textbf{10 个月后，这件事还重要吗}\quad 一次月考的名次，大概率不重要；但你这个月养成的习惯，很重要。
+\item \textbf{10 年后，这件事还重要吗}\quad 你和父母的关系、你的身体、你有没有学会自己学东西——这些还重要。
+\end{enumerate}
+
+\begin{quote}
+\kaishu
+\noindent\textbf{尺度决定判断}\quad
+同样一件事，放在 10 分钟里看是大事，放在 10 年里看是小事。\textbf{大多数焦虑，是因为用 10 分钟的尺度，去衡量 10 年后才有答案的事。}
+\end{quote}
+
+\internalheading{一个可以做的练习：给十年后的自己写封信}
+不必写得多好，回答四个问题就够：
+
+\begin{itemize}
+\item 我希望十年后的你，身体怎么样？
+\item 我希望你还在做什么事？
+\item 我希望你身边有谁？
+\item 今天做的哪件事，你可能会感谢我？
+\end{itemize}
+
+\begin{quote}
+\noindent\textbf{为什么要写}\quad
+因为写下来之后，“什么更重要”这件事会自己浮出来。你会发现，你现在最焦虑的那些事，很多根本没出现在信里。
+\end{quote}
+
+\begin{quote}
+\kaishu 不要因为走得太远，而忘记为什么出发。
+\end{quote}
+
+\articleheading{长期主义者的日常}
+{\kaishu 长期主义不是一种口号，是几个具体的习惯。}\par
+\internalheading{六个习惯}
+\begin{enumerate}
+\item \textbf{留有余地}：每天的计划只排到七成，留三成给意外和休息。排满的计划，一次小意外就全崩。
+\item \textbf{不做会后悔的事}：有些事不做，最多是遗憾；做了，是无法挽回。遇到这种时刻，宁可遗憾。
+\item \textbf{定期回看}：每月问一次“这一个月我积累了什么”。不是为了自我批评，是为了校正方向。
+\item \textbf{保护睡眠和运动}：这两件事看起来和成绩无关，实际上决定了你能持续多久。
+\item \textbf{和比自己想得远的人聊天}：老师、长辈、学长学姐。你会提前看到一些路的样子。
+\item \textbf{保留一件长期做的事}：运动、乐器、写作、读书。哪怕每周只有两小时，也一直做下去。
+\end{enumerate}
+
+\begin{quote}
+\kaishu
+\noindent\textbf{长期主义最实际的一条}\quad
+不是“每天都要努力”，而是\textbf{“不要做那些会让未来更难的事”}。少做减分项，比多做加分项更容易做到，效果也更明显。
+\end{quote}
+
+\Needspace{0.58\textheight}
+\internalheading{遇到“大家都这么做”的时候}
+\begin{center}
+\begingroup
+\renewcommand{\arraystretch}{1.10}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{>{\RaggedRight\arraybackslash}p{0.380\textwidth}>{\RaggedRight\arraybackslash}p{0.550\textwidth}}
+\toprule
+\textbf{常见说法} & \textbf{可以想一句} \\
+\midrule
+“大家都熬夜，我不熬就落后了” & 那你和大家的身体，也是一起垮的 \\
+“大家都抄作业” & “大家”不会替你考高考 \\
+“这个知识点不考，别浪费时间” & 你学的是这门学科，不是这份考纲 \\
+“选这个专业好就业” & 那四年是你去读，不是别人 \\
+“现在苦一点，以后就好了” & 如果一直苦，那说明方法错了，不是努力不够 \\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{center}
+
+\internalheading{长期清单（勾选自动保存）}
+\begin{itemize}
+\item[\(\square\)] 每天睡够 7 小时，不靠周末补
+\item[\(\square\)] 每天有 20 分钟以上的活动量
+\item[\(\square\)] 每周留半天给一件长期做的事
+\item[\(\square\)] 每月回看一次“我积累了什么”
+\item[\(\square\)] 不做那些会让自己以后更难的选择
+\end{itemize}
+
+\chapterheading{第五章　天赋}{天赋}
+{\kaishu\small 不嫉妒别人的天赋，也不崇拜它}\par
+每个班都有那种人：看一眼就会，随便考考就在前面。你很容易得出一个结论——他有天赋，我没有。这一章想把这个结论拆开看看：它有多少是真的，又有多少只是我们给自己找的一个不用开始的理由。
+
+\internalheading{本章篇目}
+{\kaishu 关于天赋　天赋决定起点，努力决定斜率}\par
+\articleheading{你羡慕的可能不是天赋}
+{\kaishu 你羡慕的往往不是“他学得快”，是“他看起来不用费劲”。}\par
+先说一句不太好听的话：当我们说“他有天赋”的时候，很多时候是在给自己找一个不用开始的理由。
+
+这不是为了责怪谁。“天赋”这个词实在太好用了——它一次性地解释了差距，还顺便说明了这个差距无法改变。一句话说完，心里就轻了。
+
+\Needspace{0.58\textheight}
+\internalheading{天赋确实存在，但它比你想的窄}
+\begin{center}
+\begingroup
+\renewcommand{\arraystretch}{1.10}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{>{\RaggedRight\arraybackslash}p{0.380\textwidth}>{\RaggedRight\arraybackslash}p{0.550\textwidth}}
+\toprule
+\textbf{天赋真正决定的东西} & \textbf{我们以为它决定的东西} \\
+\midrule
+入门的速度：多久能上手 & 能走多远 \\
+某类感觉的敏锐：对声音、形状、数字 & 愿不愿意长期投入 \\
+起点 & 斜率 \\
+容易被人看见的那一段 & 没人看见的那几年 \\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{center}
+
+\begin{quote}
+\kaishu
+\noindent\textbf{一句话}\quad
+天赋决定你多久能上手，努力决定你能在上面待多久。而在大多数领域，真正拉开距离的是后面那个。
+\end{quote}
+
+\internalheading{一个具体的对照}
+两个同学同时开始学吉他。A 上手很快，三周就能弹唱一首歌；B 手指按不实，两个月还在练和弦转换。一年以后，A 还是只会那几首，B 已经能自己扒谱。
+
+这个故事的关键不在结局，在于：\textbf{入门快慢和一年后的水平，中间没有一条必然的线。}真正把它们连起来的，是这一年里谁还在弹。
+
+\internalheading{那到底在羡慕什么}
+仔细想一想，你羡慕的可能不是“他聪明”，而是“他不用像我这样费劲”。这是一种很自然的心理：如果差距是天生的，那么我不用为它负责，也不必为此吃苦。
+
+\begin{quote}
+\noindent\textbf{换个角度}\quad
+把“他有天赋”换成“他在哪件事上花的时间比我多、方法比我好”——前者让你停在原地，后者给你一张清单。
+\end{quote}
+
+\articleheading{不要在意识里崇拜天赋}
+{\kaishu 崇拜天赋有一个很少被说破的后果：它会让努力变成一件需要藏起来的事。}\par
+班里有种很微妙的气氛：谁熬夜复习，谁就是“笨鸟先飞”；谁轻轻松松考得好，谁就是“聪明”。久而久之，很多人学会了假装不努力——明明复习了，偏说“没看”；明明做了很多题，偏说“随便做做”。
+
+\internalheading{崇拜天赋的三个代价}
+\begin{enumerate}
+\item \textbf{把努力藏起来}：为了显得聪明，你不愿意承认自己下了功夫。于是你也不敢在别人面前认真。
+\item \textbf{把失败推给天赋}：“我不是学这个的料”，这句话说出口的一瞬间，你会舒服一点，但你也同时关上了门。
+\item \textbf{把别人神秘化}：你只看到他的结果，看不到他的做法，于是你学不到任何可以学的东西。
+\end{enumerate}
+
+\internalheading{为什么“超能力”的叙事这么吸引人}
+电影、动漫、短视频里，能力的出场方式几乎都是一样的：一道光、一次顿悟、一夜之间变强。因为那样好看。没人愿意拍主角在灯下抄第三遍笔记的第二十分钟。
+
+看多了这种叙事，人会不自觉地把“厉害”和“神奇”绑在一起，然后得出一个错误的推论：既然我不神奇，那我就不可能厉害。
+
+\begin{quote}
+\kaishu
+\noindent\textbf{核心}\quad
+崇拜天赋，等于把“可以学的东西”换成了“不能学的东西”。一个让你有办法，一个让你没办法。
+\end{quote}
+
+\internalheading{换两个小动作}
+\begin{itemize}
+\item 看到厉害的人，问“他做了什么”，不问“他是什么”。前一个问题有答案，后一个没有。
+\item 承认自己努力。别人问起，就直说“我复习了”。努力不需要藏，它是你的底牌。
+\end{itemize}
+
+\begin{quote}
+\noindent\textbf{关于“至人只是常”}\quad
+真正到了某种境界的人，看起来往往很平常，甚至有点枯燥。你身边如果有那种“稳得没什么故事”的同学，值得多看两眼——那通常是最值得学的一种人。
+\end{quote}
+
+\articleheading{愿意努力，本身就是一种天赋}
+{\kaishu 这句话值得单独占一节：它包含的能力，比“聪明”稀缺得多。}\par
+我们习惯把“天赋”和“努力”摆在对立的位置上：一个天生的，一个人人都有；一个稀缺，一个只要有决心就能拿出来。
+
+但你去认真观察就会发现，事情不是这样摆的。
+
+\begin{quote}
+\kaishu
+\noindent\textbf{这句话我想说三遍}\quad
+\textbf{愿意努力，本身就是一种天赋。}它至少包含三样别人不一定有的东西：忍受枯燥的能力、在看不到结果的时候继续的能力、以及一次次失败之后还愿意回来的能力。
+\end{quote}
+
+\Needspace{0.58\textheight}
+\internalheading{为什么它比“聪明”更难得到}
+\begin{center}
+\begingroup
+\renewcommand{\arraystretch}{1.10}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{>{\RaggedRight\arraybackslash}p{0.380\textwidth}>{\RaggedRight\arraybackslash}p{0.550\textwidth}}
+\toprule
+\textbf{聪明的人会有} & \textbf{愿意努力的人会有} \\
+\midrule
+一次就听懂 & 一遍没懂，还愿意听第二遍 \\
+遇到难题时不慌 & 遇到难题时不逃 \\
+很快看到效果 & 长时间看不到效果也不换赛道 \\
+做出来时的漂亮 & 做不出来时还坐在那儿 \\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{center}
+
+第一列是天赋，看得见、好听、让人羡慕。第二列也是天赋，只是它长得像“性格”，所以很少有人把它当成本事。
+
+\internalheading{别把它交给“性格”两个字}
+有人会说：“我就是坐不住。”坐不住是\textbf{现在}的状态，不是对你的判决。而它是有办法的：
+
+\begin{enumerate}
+\item \textbf{把时长缩到做得到的程度}\quad 15 分钟起步。目标小到你没有理由拒绝，先让它发生。
+\item \textbf{固定时间和地点}\quad 每天同一时间、同一个位置。让身体先记住，再谈意志力。
+\item \textbf{记录，不评价}\quad 只记“今天做了 20 分钟”。不要写“我还是不够努力”——评价会让人想逃。
+\item \textbf{允许断，但不允许连着断}\quad 断一天是意外，断两天才是新习惯。
+\end{enumerate}
+
+\internalheading{一个可以自查的问题}
+你能不能连续两周，每天为一个不紧急的目标坐下来二十分钟？如果能，那你手里握着的是很多人羡慕却买不到的东西。别小看它。
+
+\begin{quote}
+\noindent\textbf{也想对你说}\quad
+如果你已经能每天坐下来做一件事，那么请把它算进你的优点里。这个世界上聪明的人很多，能坐得住的人不多。
+\end{quote}
+
+\begin{quote}
+锲而舍之，朽木不折；锲而不舍，金石可镂。
+\par\raggedleft\kaishu ——《荀子·劝学》
+\end{quote}
+
+\articleheading{别人看起来毫不费力，是因为你没看见他费力}
+{\kaishu 你看到的是他举手的那一瞬间，看不到的是前一晚他查了半小时资料。}\par
+人在比较的时候，只能看到两样东西：结果，和当时的场面。看不到过程。而过程恰好是差距真正产生的地方。
+
+\begin{itemize}
+\item 你看到他说“我没复习”，没看到他上课一直在跟着老师的思路走。
+\item 你看到他十分钟写完一张卷子，没看到他之前做过三十张。
+\item 你看到他在台上讲话很稳，没看到他在家里对着镜子练过五遍。
+\item 你看到他考试时很淡定，没看到他考前把担心的事一条条写下来过。
+\end{itemize}
+
+\internalheading{一个可以立刻做的观察实验}
+挑一位你觉得“有天赋”的同学，观察一周。只记录他具体做了什么，不评价他聪明不聪明：
+
+\begin{itemize}
+\item 他什么时候开始做题？中间会不会停下来？
+\item 他的错题是怎么处理的？抄一遍，还是重做一遍？
+\item 他问老师什么问题？问得多细？
+\item 他课间在做什么？
+\item 他一天里，有哪几段时间是完全不被打扰的？
+\end{itemize}
+
+\begin{quote}
+\kaishu
+\noindent\textbf{一周之后}\quad
+你多半会发现：他的“天赋”里，有相当大一部分是\textbf{可以被复制的东西}——固定的时间段、处理错题的方法、敢问问题的习惯。剩下那些真正不可复制的部分，通常没有你以为的那么决定性。
+\end{quote}
+
+\begin{quote}
+\noindent\textbf{这不是要你否认差距}\quad
+差距是真的存在。只是它的来源比“天赋”两个字复杂得多，也可操作得多。你不需要否认差距，你只需要知道：差距里有一部分，是你的。
+\end{quote}
+
+\chapterheading{第六章　至人只是常}{至人只是常}
+{\kaishu\small 不必活成传奇，普通人的力量被低估了}\par
+《菜根谭》里有一句话：「醲肥辛甘非真味，真味只是淡；神奇卓异非至人，至人只是常。」真正到了某种境界的人，看起来往往很平常。这一章讲的是：把“出众”从“神奇”里拿出来，放回日常里。
+
+\internalheading{本章篇目}
+{\kaishu 平常的力量　真正厉害的人，看起来都很普通}\par
+\articleheading{至人只是常}
+{\kaishu 神奇卓异不是至人，至人只是常。}\par
+\begin{quote}
+醲肥辛甘非真味，真味只是淡；神奇卓异非至人，至人只是常。
+\par\raggedleft\kaishu ——《菜根谭》
+\end{quote}
+
+先把这句话讲清楚。“至人”是达到了很高境界的人。这句话说的是一件反直觉的事：这种人看起来并不神奇，相反，很平常。
+
+\internalheading{为什么真正厉害的人看起来普通}
+\begin{itemize}
+\item \textbf{熟练会让动作变平淡}：多余的动作都被去掉了，看起来没有表演性，甚至有点慢。
+\item \textbf{他们不需要观众}：做得好不好，自己心里有数，不靠别人的反应来确认。
+\item \textbf{他们的日常大量重复}：真正支撑水平的是那些无聊的部分——重复、复盘、修正。
+\item \textbf{他们做的事听起来很普通}：按时到、把题改完、不懂就问。没有一件是传奇。
+\end{itemize}
+
+\internalheading{我们是被“神奇”训练坏的一代}
+从小看的动画、电影、爽文里，能力的出现方式几乎都是“觉醒”：一道光、一次顿悟、一夜之间换了一个人。因为那样好看，也因为它省掉了中间那些没有画面的年份。
+
+看多了以后，人心里会留下一个默认设置：\textbf{真正厉害的人，应该是神奇的。}这个默认设置有两个坏处——你会觉得自己的普通是一种失败；你也会看不见身边那些真正值得学的人，因为他们都太普通了。
+
+\begin{quote}
+\kaishu
+\noindent\textbf{换一副眼镜}\quad
+把“了不起”从“神奇”里拿出来，放回“日常”里。你会发现值得学的人一下子多了起来：那个每天最早到教室的人，那个错题本写得最工整的人，那个从来不迟到的人。
+\end{quote}
+
+\internalheading{三个可以观察的信号}
+\begin{description}
+\item[{\textbf{稳}}] 他们的水平波动很小。不是每次都很高，是很少很低。
+\item[{\textbf{常}}] 做的事听起来都很普通，日复一日，没什么可讲的。
+\item[{\textbf{不解释}}] 不需要向别人说明自己为什么这么做，也不急着证明。
+\end{description}
+
+\begin{quote}
+\noindent\textbf{这句老话不是让你放弃出众}\quad
+它说的是：出众的样子，可能和你想象的不一样。它更像一棵树长成——你回头看才知道它长了，当时看不出什么动静。
+\end{quote}
+
+\articleheading{不必成为超级英雄}
+{\kaishu 想成为“超级英雄”这件事，会偷偷改变你做事的理由。}\par
+如果只有“了不起”才值得被记住，那么日常的努力就没有意义；如果只有“天赋异禀”才配被看见，那么普通人的劳动就变成了背景。
+
+这不是一个抽象的哲学问题。它会改变你每天的状态。
+
+\internalheading{超级英雄叙事的三个副作用}
+\begin{enumerate}
+\item \textbf{看不起日常}：“这种小事有什么意义？”于是该做的事一天天拖着。
+\item \textbf{等待顿悟}：总觉得某一天会遇到一个改变一切的瞬间，在那之前可以不用太认真。
+\item \textbf{把平凡当作失败}：一旦确认自己“只是个普通人”，就觉得人生已经输了。
+\end{enumerate}
+
+\internalheading{换一种说法}
+把“我要成为一个什么样的人”换成“我今天要把哪件事做好”。前一句要等一个奇迹，后一句现在就能开始。
+
+这不是降低标准。恰恰相反，把目标落到具体的事上，标准反而更严格——因为“成为厉害的人”可以永远模糊地拖下去，而“今天把这三道题弄懂”骗不了自己。
+
+\begin{quote}
+\kaishu
+\noindent\textbf{一句要紧的话}\quad
+大多数人的一生，不是由几个高光时刻组成的，而是由几千个普通的日子组成的。\textbf{你怎么过这些普通的日子，就是你怎么过这一生。}
+\end{quote}
+
+\begin{quote}
+\noindent\textbf{关于比较}\quad
+“我很普通”这个念头，通常是在比较里出现的。而比较的样本永远是别人的高光集锦。这个对比本身就不公平，得出的结论也不必当真。
+\end{quote}
+
+\begin{quote}
+\kaishu 一个人只要不失去方向，就不会失去自己。
+\end{quote}
+
+\articleheading{把普通的日子过好}
+{\kaishu 把普通的日子过好，本身就是一件大事。}\par
+很多人的痛苦不来自累，来自“我好像很普通”。这个恐惧会让人做一些奇怪的事：为了显得不普通而选更难的路，为了证明自己不普通而不肯休息，或者干脆什么都不做——因为“反正也成不了什么”。
+
+\Needspace{0.58\textheight}
+\internalheading{四件平常但有分量的事}
+\begin{center}
+\begingroup
+\renewcommand{\arraystretch}{1.10}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{>{\RaggedRight\arraybackslash}p{0.235\textwidth}>{\RaggedRight\arraybackslash}p{0.280\textwidth}>{\RaggedRight\arraybackslash}p{0.400\textwidth}}
+\toprule
+\textbf{这件事} & \textbf{看起来} & \textbf{实际在做什么} \\
+\midrule
+把觉睡够 & 谁都做得到 & 给明天的自己留出力气 \\
+把手上的事做完 & 很基础 & 积累“我说到做到”的自我信任 \\
+保留一件长期做的事 & 和成绩无关 & 让自己有一条不依赖评价的线 \\
+对身边的人好一点 & 很小 & 在建立你以后要住一辈子的关系 \\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{center}
+
+\begin{quote}
+\kaishu
+\noindent\textbf{可以不矛盾}\quad
+你可以既普通，又认真。认真地做一个普通人，比焦虑地做一个“尚未成功的天才”，日子要好过得多，走得也通常更远。
+\end{quote}
+
+\internalheading{如果“普通”这个词让你难受}
+试着把它换成另外一句话：\textbf{我不是特别的那一个，但这不影响我把今天过好。}承认自己普通，不会让你变差；它只是让你把力气从“证明我不普通”移到“把手上的事做好”——后者是有回报的，前者没有。
+
+\begin{quote}
+\noindent\textbf{最后}\quad
+这个网站本身也很普通：黑白的，没有动画，作者是个普通学生。但它是我认真做完的一件事。这就够了。
+\end{quote}
+
+\begin{quote}
+神奇卓异非至人，至人只是常。
+\par\raggedleft\kaishu ——《菜根谭》
+\end{quote}
+
+\chapterheading{第七章　具体的处境}{具体的处境}
+{\kaishu\small 道理懂了，具体的事还要具体地办}\par
+前面六章讲的是方向，这一章讲操作：和父母、朋友、手机、睡眠、时间和考试，这些每天都要面对的具体问题。
+
+\internalheading{本章篇目}
+{\kaishu 常见处境　把难办的事，拆成能办的事}\par
+\articleheading{和父母谈成绩：把对抗变成商量}
+{\kaishu “他们只看分数”和“你根本不懂我”这两句话，通常都是真的，也都没用。}\par
+先理解对方的逻辑。父母的焦虑大多来自恐惧：怕你走弯路、怕你以后受苦、怕自己没尽到责任。理解不等于认同，但它能让对话不卡在第一句。
+
+\internalheading{把谈话拆成四步}
+\begin{enumerate}
+\item \textbf{先给结论，再给理由}\quad “这次我退了 20 名，我想和你们一起看看问题在哪。”——先承认事实，对方才愿意听后面的话。
+\item \textbf{说你自己的感受，不评价他们}\quad “我自己也很慌”比“你们就知道骂我”有效得多。前者是信息，后者是攻击。
+\item \textbf{带一个方案去谈}\quad “我想每天晚上 8 到 10 点自己安排，11 点前睡，两周后我们再看效果。”有方案的人，才像在负责。
+\item \textbf{约定一个复查时间}\quad “下周日我们一起看一下这一周的情况。”把对抗变成了一次有期限的实验。
+\end{enumerate}
+
+\begin{quote}
+\kaishu
+\noindent\textbf{一个关键的转换}\quad
+不要问“你们为什么不懂我”，改问\textbf{“我需要你们具体做什么”}。“别管我”很难被接受，“这两天先不问我分数，让我自己理一理”就具体得多。
+\end{quote}
+
+\internalheading{如果实在谈不动}
+\begin{itemize}
+\item 换一种媒介：写下来或发消息，比当面说更容易说清楚。
+\item 找中间人：亲戚、老师、学校心理老师都可以。
+\item 选时间：不在双方都累、都在气头上、刚考完试的时候谈。
+\item 一次只谈一件事：别把手机、成绩、态度、别人家孩子打包一起算。
+\end{itemize}
+
+\begin{quote}
+\noindent\textbf{说一句实话}\quad
+有些父母的沟通方式确实有问题，这不是你能改变的。你能做的是：\textbf{不把他们的评价当成对自己的定义。}他们说的是他们的焦虑，不是你的全部。
+\end{quote}
+
+\articleheading{朋友与孤独}
+{\kaishu 高中的人际关系浓度很高：每天相处十几个小时，一点小摩擦都容易被放大。}\par
+\internalheading{交朋友其实只有两步}
+\begin{enumerate}
+\item \textbf{重复接触}：友谊大多不是“一见如故”，而是“经常碰见”。同一个兴趣小组、球队、座位区都是机会。
+\item \textbf{一点点加深}：从作业、天气，聊到喜欢的歌、烦心的事。不必一次全倒出来。
+\end{enumerate}
+
+\Needspace{0.58\textheight}
+\internalheading{小矛盾怎么处理}
+\begin{center}
+\begingroup
+\renewcommand{\arraystretch}{1.10}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{>{\RaggedRight\arraybackslash}p{0.235\textwidth}>{\RaggedRight\arraybackslash}p{0.280\textwidth}>{\RaggedRight\arraybackslash}p{0.400\textwidth}}
+\toprule
+\textbf{情况} & \textbf{不建议} & \textbf{可以试试} \\
+\midrule
+被开过分的玩笑 & 憋着，然后突然爆发 & 平静地说：“这个玩笑我不舒服，别开了。” \\
+朋友和别人更近 & 冷暴力、阴阳怪气 & 直接说：“最近感觉我们聊少了，我有点在意。” \\
+被误会 & 到处解释、拉人站队 & 找当事人单独说，先问“你听到的版本是什么？” \\
+三观不合 & 试图说服对方 & 承认看法不同，把关系放在观点之上 \\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{center}
+
+\begin{quote}
+\kaishu
+\noindent\textbf{关于孤独}\quad
+孤独不代表你有问题，它只说明你需要连接。而且\textbf{独处的能力和交朋友的能力同样重要}——高中之后，你要一个人面对的时间只会更多。
+\end{quote}
+
+\internalheading{如果你常常一个人}
+\begin{itemize}
+\item 先从低成本连接开始：一起吃饭、借本书、问一道题。
+\item 发展一个“共同体”：社团、球队、志愿服务、线上兴趣社群。
+\item 把独处变成一件正经事：读书、跑步、写东西，而不是躺着刷手机。
+\item 如果长期孤独且情绪持续低落，把这件事告诉一个可信任的成年人。这不是软弱。
+\end{itemize}
+
+\begin{quote}
+\noindent\textbf{一个现实提醒}\quad
+不是所有关系都值得修复，也不是所有人都会喜欢你。有些关系淡了就是淡了，那不是你的失败。要守住的只有一条：\textbf{不必为了让别人满意而长期贬低自己。}
+\end{quote}
+
+\articleheading{手机与注意力：把注意力拿回来}
+{\kaishu 短视频和游戏不是道德问题，是设计问题——它们比你更懂怎么抓住你。}\par
+先承认：在这场较量里你本来就处于劣势。无限滚动、即时反馈、自动播放，这些设计的目的就是让你停不下来。所以“我意志力太差”这个结论是不公平的。
+
+\internalheading{三个比意志力更可靠的办法}
+\begin{enumerate}
+\item \textbf{增加摩擦}：卸载、退出登录、把 App 挪到第二屏、做题时把手机放到另一个房间。每多一步操作，你就多一次清醒的机会。
+\item \textbf{用替代，不用戒断}：休息时用听音乐、走动、和人说话来替代刷手机。直接“禁止自己”很难，换成别的事就容易得多。
+\item \textbf{给手机安排固定时间}：比如中午 20 分钟、晚上 30 分钟。有固定时间的人，反而不会一直在想它。
+\end{enumerate}
+
+\begin{quote}
+\kaishu
+\noindent\textbf{一个更根本的问题}\quad
+刷手机往往不是因为你想看，而是因为\textbf{你不想面对手头这件事}。所以真正的解法是：把任务切到“小到不需要逃避”的程度。
+\end{quote}
+
+\internalheading{一个对照实验}
+用同一门科目做两次对照：一次手机放身边，一次手机放另一个房间，各 25 分钟，记录完成量和错误率。多数人做完这个实验之后，就不再需要别人劝了。
+
+\begin{quote}
+\noindent\textbf{睡前这一条最重要}\quad
+把充电器从床头移到书桌。这一条改动最小，收益最大。
+\end{quote}
+
+\articleheading{睡眠与身体：这不是浪费时间}
+{\kaishu 很多人把睡眠当成可以透支的资源。它不是。}\par
+睡眠不足的表现不只是困：注意力下降、记不住东西、情绪容易失控、一点小事就想发火。也就是说，\textbf{熬夜换来的时间，第二天会加倍还回去。}
+
+\internalheading{睡眠卫生清单}
+\internalheading{睡前 1 小时清单（勾选自动保存）}
+\begin{itemize}
+\item[\(\square\)] 手机放到床够不着的地方
+\item[\(\square\)] 把明天要带的东西收好，减少“怕忘”的紧张
+\item[\(\square\)] 写下脑子里转的事，写完合上
+\item[\(\square\)] 灯光调暗，屏幕切到夜间模式
+\item[\(\square\)] 下午 3 点后不喝奶茶、可乐、浓茶、咖啡
+\item[\(\square\)] 床只用来睡觉，不躺着写作业刷手机
+\item[\(\square\)] 固定起床时间（比固定入睡时间更有效）
+\item[\(\square\)] 白天晒 20 分钟太阳、有 30 分钟活动量
+\item[\(\square\)] 午睡不超过 30 分钟，且不晚于下午 3 点
+\item[\(\square\)] 躺下 20 分钟睡不着就起来，做点无聊的事，困了再回去
+\end{itemize}
+
+\internalheading{身体这一块，只有三条}
+\begin{itemize}
+\item \textbf{睡够}：高中生建议 7—8 小时。做不到就先把起床时间固定下来。
+\item \textbf{动起来}：每天 20—30 分钟快走、跑步、跳绳都行。它比任何“提神饮料”都管用。
+\item \textbf{吃早饭}：有蛋白质的早饭，能让你第三四节课不发虚。
+\end{itemize}
+
+\begin{quote}
+\kaishu
+\noindent\textbf{换个说法}\quad
+不要把睡觉看成“今天结束了”，把它看成\textbf{“在给明天的自己充电”}。你现在牺牲的不是时间，是明天的效率。
+\end{quote}
+
+\begin{quote}
+\noindent\textbf{什么时候该去医院}\quad
+如果失眠持续一个月以上、每周三次以上，或者白天完全撑不住，去医院睡眠门诊或神经内科看看。长期失眠是可以治疗的，硬扛是最差的选择。
+\end{quote}
+
+\articleheading{一周怎么安排：时间与精力}
+{\kaishu 时间管理的核心不是“做更多”，而是“决定不做什么”。}\par
+\Needspace{0.58\textheight}
+\internalheading{先分清四类事}
+\begin{center}
+\begingroup
+\renewcommand{\arraystretch}{1.10}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{>{\RaggedRight\arraybackslash}p{0.235\textwidth}>{\RaggedRight\arraybackslash}p{0.280\textwidth}>{\RaggedRight\arraybackslash}p{0.400\textwidth}}
+\toprule
+\textbf{} & \textbf{紧急} & \textbf{不紧急} \\
+\midrule
+重要 & 明天要交的作业、后天的考试 & 错题整理、薄弱模块补强、睡眠与运动 \\
+不重要 & 别人临时找你的事、无关的通知 & 无目的刷手机、反复看排名 \\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{center}
+
+真正决定成绩的是右上那一格：\textbf{重要但不紧急}。它永远不会催你，所以最容易被拖到变成紧急。
+
+\begin{quote}
+\kaishu
+\noindent\textbf{一句要紧的话}\quad
+如果你的一周里右上那一格长期是空的，那你只是在应付，不是在进步。
+\end{quote}
+
+\internalheading{一个能用的周计划模板}
+\begin{enumerate}
+\item \textbf{先写下这周的三件大事}\quad 不超过三件，且必须是“重要不紧急”的那类，比如“函数这一章过完”。
+\item \textbf{再把它们拆到每一天}\quad 每天只安排 2—3 件必须完成的具体任务，其余留白。
+\item \textbf{标出精力最好的时段}\quad 把最难的任务放在那里。多数人是上午第二三节和晚自习前段。
+\item \textbf{给休息也定时间}\quad 休息不定时间，就会一直休息。5 分钟就是 5 分钟。
+\item \textbf{周日花 15 分钟回看}\quad 哪件事有效、哪件事白做、下周改一件。
+\end{enumerate}
+
+\internalheading{别把计划排满}
+把时间排到十成满的人，通常一次意外就放弃整个计划。排到七成，留三成给意外和休息，计划反而能执行下去。
+
+\begin{quote}
+\noindent\textbf{关于工具}\quad
+工具箱里有「番茄钟与任务清单」「时间四象限」「每周复盘」，可以直接用。顺序建议是：先用四象限决定做什么，再用番茄钟决定怎么做，最后用复盘决定下次改什么。
+\end{quote}
+
+\articleheading{考试前后：把紧张变成准备}
+{\kaishu 紧张不是敌人，它只是提醒你这件事情很重要。}\par
+\internalheading{考前一周}
+\begin{itemize}
+\item 固定作息，不再熬夜补漏。睡眠是最便宜的提分手段。
+\item 复习已经学过的东西，不做新难题。维护信心比扩大知识面更重要。
+\item 按考试时间做一套完整的卷子，包括涂卡和时间分配。
+\item 把担心的事全写下来，每条后面写一句“那我可以怎么办”。
+\item 考试当天吃平时吃过的食物，不冒险尝新。
+\end{itemize}
+
+\internalheading{考场上最实用的四招}
+\begin{enumerate}
+\item \textbf{发卷前做几次慢呼气}\quad 吸气 4 秒，呼气 8 秒。呼气比吸气长，能让心跳慢下来。
+\item \textbf{先把有把握的题做掉}\quad 用几道对题建立节奏，再回头啃难的。
+\item \textbf{卡住就跳，限时 90 秒}\quad 超过 90 秒没思路就标记跳过。已经在上面花的时间，不会因为坚持而回来。
+\item \textbf{注意力跑掉了就回到身体}\quad 脚踩实地面，手摸一下笔，然后读下一句题干。不要骂自己走神，那只会更乱。
+\end{enumerate}
+
+\begin{quote}
+\kaishu
+\noindent\textbf{换个说法}\quad
+把“我必须考好”换成\textbf{“我尽力把会做的做对”}；把“考砸就完了”换成“考砸了我要启动下一步”。可控的目标才会降低紧张。
+\end{quote}
+
+\internalheading{考完之后}
+\begin{itemize}
+\item 对答案的时机由你决定。如果只会带来情绪内耗，就先不对。
+\item 允许自己难受一天，但给它一个期限。
+\item 三天之内做一次复盘，把情绪换成信息（工具箱里的「考后复盘」）。
+\item 记住：一次考试测量的是某个时间点的掌握情况，它不测量你的价值，也不测量你的上限。
+\end{itemize}
+
+\begin{quote}
+\kaishu 你不需要不紧张，你只需要在紧张的时候依然把事情做完。
+\end{quote}
+
+\chapterheading{附录一　八个自助工具}{八个自助工具}
+网站上可以直接用，这里是它们各自解决什么问题
+
+这些工具在网站上是可以操作的；书里写的是每一个工具的用法和判断标准，照着做也行，用纸和笔就能完成。
+
+\noindent\textbf{一、番茄钟与任务清单}\par
+25 / 5 的专注计时，可自定义时长，自带任务清单与完成个数统计。
+
+{\kaishu 提示：手机放到另一个房间，效果翻倍。}\par
+\noindent\textbf{二、目标与计划生成器}\par
+输入一个大目标，自动生成可衡量的目标句、“如果—那么”计划和每周三件事。
+
+{\kaishu 提示：生成后可以复制到备忘录，或打印贴在书桌前。}\par
+\noindent\textbf{三、时间四象限}\par
+把待办放进“重要 / 紧急”四格，看清哪些事该做、哪些该删掉。
+
+{\kaishu 提示：真正决定成绩的，通常是“重要但不紧急”那一格。}\par
+\noindent\textbf{四、每周复盘}\par
+一周 15 分钟，回顾有效做法、无效消耗与下周要改的一件事。
+
+{\kaishu 提示：固定每周同一个时间做，效果最好，支持打印。}\par
+\noindent\textbf{五、考后复盘}\par
+按科目统计失分类型（概念 / 审题 / 计算 / 时间 / 状态），找出真正要补的洞。
+
+{\kaishu 提示：把“我没考好”翻译成“哪里没考好”，情绪就变成了信息。}\par
+\noindent\textbf{六、每日状态记录}\par
+记下每天的状态、原因和应对，自动画出趋势曲线，可以导出 CSV。
+
+{\kaishu 提示：记两周你就会发现规律：哪种日子最容易崩，以及什么做法真的有用。}\par
+\noindent\textbf{七、把烦恼写清楚}\par
+五栏记录：发生了什么 → 脑子里的第一句话 → 两边证据 → 更准确的说法。
+
+{\kaishu 提示：写下来比在脑子里反复想有用得多。可以保存、载入、打印。}\par
+\noindent\textbf{八、呼吸练习}\par
+4-7-8、箱式 4-4-6-2、平衡 6-6 三种节奏，带圆圈引导和轮次统计。
+
+{\kaishu 提示：考前、睡前、想发火的时候都能用。每次 2—5 分钟。}\par
+\chapterheading{附录二　资源推荐}{资源推荐}
+共 11 类 66 条：书单以小说为主，另有一些课、片子与工具
+
+书单故意以小说为主，因为很多事在读的时候不懂，但会在之后的某一瞬间重新回到生活里。
+
+\needspace{6\baselineskip}
+\phantomsection\subsection*{小说 · 一个人怎么活}\addcontentsline{toc}{subsection}{小说 · 一个人怎么活}
+{\kaishu\small 小说不给答案，但它会把某种活法替你走一遍。很多当时不懂的地方，会在之后的某个瞬间突然对上。}\par
+\needspace{5\baselineskip}
+\noindent\textbf{《斯通纳》}　约翰·威廉斯\par
+一个普通大学教师的一生：不算成功，没有传奇，但有一种安静的尊严。读完会重新理解“过得好”是什么意思。
+
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{《局外人》}　加缪\par
+一个人因为在母亲的葬礼上没有哭，最后被判了死刑。关于不合群、真实，以及有没有必要向世界解释自己。
+
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{《悉达多》}　黑塞\par
+一个人用一辈子找自己的路：先苦修，再沉入欲望，最后在一条河边停下来。文字极干净，读起来像听人讲完一个很长的故事。
+
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{《长日将尽》}　石黑一雄\par
+一个把一生献给“体面工作”的管家，晚年才发现自己效忠的东西是错的。写得极其克制，痛感却拖得很长。
+
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{《看不见的城市》}　卡尔维诺\par
+马可·波罗向忽必烈描述五十五座城市，每一座都不存在。关于想象，也关于你用什么方式看世界。
+
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{《树上的男爵》}　卡尔维诺\par
+一个人为了坚持自己的原则，从此住在树上。关于不随大流要付出什么，又能得到什么。
+
+\vspace{0.25\baselineskip}
+\needspace{6\baselineskip}
+\phantomsection\subsection*{小说 · 普通人的一生}\addcontentsline{toc}{subsection}{小说 · 普通人的一生}
+{\kaishu\small 主角都不是英雄。他们过的日子，和你我以后要过的日子很像——这一部分和「至人只是常」那一章是一伙的。}\par
+\needspace{5\baselineskip}
+\noindent\textbf{《一个人的村庄》}　刘亮程\par
+写一个村庄、一条狗、一阵风和一桩桩闲事。读它的人会突然开始注意自己身边的东西。
+
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{《冬牧场》}　李娟\par
+跟着哈萨克牧民居麻一家去冬牧场住了一个冬天。没有情节，就是日子本身，但异常好读。
+
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{《棋王》}　阿城\par
+《棋王》《树王》《孩子王》三个中篇。讲一个人在极贫瘠的日子里，还能认真对待一件事。
+
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{《许三观卖血记》}　余华\par
+一个男人靠卖血渡过人生里一个个难关。苦难里有滑稽，滑稽里有体面。比《活着》更轻，也更狠。
+
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{《呼兰河传》}　萧红\par
+写童年、写小城、写那些活着又像没活过的人。句子很短，读起来却沉。
+
+\vspace{0.25\baselineskip}
+\needspace{6\baselineskip}
+\phantomsection\subsection*{小说 · 时代与个人}\addcontentsline{toc}{subsection}{小说 · 时代与个人}
+{\kaishu\small 当一个人的命运被时代推着走的时候，他还剩下什么可以自己做主。}\par
+\needspace{5\baselineskip}
+\noindent\textbf{《尘埃落定》}　阿来\par
+用一个“傻子”少爷的眼睛，看一个土司家族怎么塌掉。中文小说里少见的大气与诗意。
+
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{《佩德罗·巴拉莫》}　胡安·鲁尔福\par
+很薄的一本，写一个已经没有人烟的村子。时间被打乱，死人开口说话。马尔克斯说这本书让他找到了路。
+
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{《使女的故事》}　玛格丽特·阿特伍德\par
+一个把女性变成生育工具的国家，是怎么一步一步变成这样的。读的时候会不断想起现实。
+
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{《我们》}　扎米亚京\par
+《一九八四》之前的那本反乌托邦：一个绝对整齐的世界里，人被编成号码。比 1984 更早，也更冷。
+
+\vspace{0.25\baselineskip}
+\needspace{6\baselineskip}
+\phantomsection\subsection*{中文短篇与散文}\addcontentsline{toc}{subsection}{中文短篇与散文}
+{\kaishu\small 适合睡前一小时读一篇。短，但可以在心里待很久。}\par
+\needspace{5\baselineskip}
+\noindent\textbf{《我与地坛》}　史铁生\par
+一个坐在轮椅上的人，在一个废弃的园子里想了很多年。中文里讲“想通”讲得最好的一本。
+
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{《受戒》}　汪曾祺\par
+一个和尚和一个小姑娘的初恋，干净得像一幅水墨。读完会觉得世界还挺好。
+
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{《台北人》}　白先勇\par
+十四个短篇，写一群从大陆到台北的人。繁华与苍凉同时在，有些句子漂亮到想抄下来。
+
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{《冬泳》}　班宇\par
+写九十年代东北的下岗工人和他们的孩子。语气很冷，人很热。近些年最好的中文短篇集之一。
+
+\vspace{0.25\baselineskip}
+\needspace{6\baselineskip}
+\phantomsection\subsection*{非虚构 · 关于贫穷与陌生人}\addcontentsline{toc}{subsection}{非虚构 · 关于贫穷与陌生人}
+{\kaishu\small 这一栏有点私心：我很在意那些日子不太好过的人。这几本是认真写他们的书，写得也好看。}\par
+\needspace{5\baselineskip}
+\noindent\textbf{《扫地出门》}　马修·德斯蒙德\par
+一位社会学家住进美国最穷的社区，写下八个家庭被驱逐的过程。贫穷怎么一层层把人逼到墙角，看得很清楚。
+
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{《我在底层的生活》}　芭芭拉·艾伦瑞克\par
+作者隐姓埋名去当服务员、清洁工、超市理货员，只靠这份工资生活。结论是：这样的工资，租不起一间房。
+
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{《贫穷的本质》}　班纳吉 / 迪弗洛\par
+两位诺奖经济学家研究“穷人为什么不这样那样做”，最后发现很多选择在他们的处境里其实是理性的。
+
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{《当呼吸化为空气》}　保罗·卡拉尼什\par
+一位神经外科医生三十六岁被查出肺癌，然后把剩下的时间写成了这本书。关于时间不多的时候，什么才算要紧。
+
+\vspace{0.25\baselineskip}
+\needspace{6\baselineskip}
+\phantomsection\subsection*{思维与判断}\addcontentsline{toc}{subsection}{思维与判断}
+{\kaishu\small 比记住更多知识更重要的，是会提问、少犯错。}\par
+\needspace{5\baselineskip}
+\noindent\textbf{《学会提问》}　尼尔·布朗\par
+批判性思维的入门书，给出一整套提问清单，可以直接拿来做读书笔记。
+
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{《思考，快与慢》}　丹尼尔·卡尼曼\par
+诺奖得主讲两套思维系统与认知偏差。有点厚，可以挑章节读。
+
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{《事实》}　汉斯·罗斯林\par
+用数据纠正我们对世界的十个本能性误判。读完会更少被情绪化的说法带走。
+
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{《系统之美》}　德内拉·梅多斯\par
+系统思考入门：反馈回路、延迟与杠杆点。能解释“为什么越努力越累”。
+
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{《超越智商》}　基思·斯坦诺维奇\par
+聪明人为什么会做蠢决定。作者的核心观点是：理性是一种可以和智力分开的能力——这对“天赋决定一切”是一记重击。
+
+\vspace{0.25\baselineskip}
+\needspace{6\baselineskip}
+\phantomsection\subsection*{关于努力与学习}\addcontentsline{toc}{subsection}{关于努力与学习}
+{\kaishu\small 呼应「愿意努力，本身就是一种天赋」那一章：努力不是一句空话，它有具体的方法。}\par
+\needspace{5\baselineskip}
+\noindent\textbf{《终身成长》}　卡罗尔·德韦克\par
+成长型思维的源头。结论很简单：相信能力可以发展的人，遇到困难时更愿意坚持，最后也走得更高。
+
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{《刻意练习》}　安德斯·艾利克森\par
+“一万小时”被误传了很多年，原意其实更严格：有明确目标、有及时反馈、始终待在舒适区之外。
+
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{《认知天性》}　彼得·布朗 等\par
+十一位认知心理学家给出的学习法则。最有用的一条：合上书自己回想，比重读五遍有效得多。
+
+\vspace{0.25\baselineskip}
+\needspace{6\baselineskip}
+\phantomsection\subsection*{公开课与讲座}\addcontentsline{toc}{subsection}{公开课与讲座}
+{\kaishu\small 免费的优质课程，比刷短视频划算得多。}\par
+\needspace{5\baselineskip}
+\noindent\textbf{Learning How to Learn}　芭芭拉·奥克利 · Coursera\par
+全球最受欢迎的学习方法课，有中文字幕，可免费旁听。
+
+{\small\url{https://www.coursera.org/learn/learning-how-to-learn}}\par
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{中国大学MOOC}　网易与高教社\par
+各学科精品课，从高中同步到大学先修都有。找一门你感兴趣的，每周看两节。
+
+{\small\url{https://www.icourse163.org/}}\par
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{学堂在线}　清华大学发起\par
+大量高校免费课程，文史哲和通识课尤其丰富。
+
+{\small\url{https://www.xuetangx.com/}}\par
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{可汗学院（中文）}　Khan Academy\par
+数学、物理、化学、生物按知识点讲解，适合回头补基础。
+
+{\small\url{https://zh.khanacademy.org/}}\par
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{Coursera}　全球高校\par
+大学公开课平台，很多课可以免费旁听。
+
+{\small\url{https://www.coursera.org/}}\par
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{B 站 · 学科与人文讲座}　bilibili\par
+搜索“某大学 + 课程名”，能找到大量完整的公开课录像。挑播放量高、评论认真的。
+
+{\small\url{https://www.bilibili.com/}}\par
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{豆瓣读书}　豆瓣\par
+找书、看书评、看同类推荐。用好“想读”清单，比盲目买书强。
+
+{\small\url{https://book.douban.com/}}\par
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{中国互联网联合辟谣平台}　官方\par
+核查网络传言。配合“先停一下、再查来源”的习惯使用。
+
+{\small\url{https://www.piyao.org.cn/}}\par
+\vspace{0.25\baselineskip}
+\needspace{6\baselineskip}
+\phantomsection\subsection*{影片与纪录片}\addcontentsline{toc}{subsection}{影片与纪录片}
+{\kaishu\small 一部好电影能替你说出说不出口的东西。}\par
+\needspace{5\baselineskip}
+\noindent\textbf{《高考》}　CCTV 纪录片\par
+真实记录中国高中生的备考生活。看过之后你会知道自己并不孤单。
+
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{《人生七年》}　Up series · 英国\par
+跟拍不同阶层的人几十年，会让你重新思考“命运”与“选择”。
+
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{《徒手攀岩》}　Free Solo\par
+关于专注、准备与恐惧管理。极限版的刻意练习。
+
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{《寿司之神》}　Jiro Dreams of Sushi\par
+一个人用一辈子把一件事做到极致。看完会想认真对待手上的事。
+
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{《心灵捕手》}　Good Will Hunting\par
+关于天赋、创伤与被理解。
+
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{《垫底辣妹》}　日本\par
+差生逆袭的真实故事，讲方法也讲陪伴。
+
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{《三傻大闹宝莱坞》}　印度\par
+关于教育、热爱与恐惧。笑着笑着就哭了。
+
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{《当幸福来敲门》}　The Pursuit of Happyness\par
+关于在绝境中仍然往前走。
+
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{《地球脉动》}　BBC\par
+心情压抑的时候看自然纪录片，是最有效的注意力转移。
+
+\vspace{0.25\baselineskip}
+\needspace{6\baselineskip}
+\phantomsection\subsection*{工具与网站}\addcontentsline{toc}{subsection}{工具与网站}
+{\kaishu\small 把方法变成日常的一部分。}\par
+\needspace{5\baselineskip}
+\noindent\textbf{Forest 专注森林}\par
+专注计时与种树激励，把刷手机的时间换成专注时长。手机端为主。
+
+{\small\url{https://www.forestapp.cc/}}\par
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{Anki}\par
+间隔重复记忆卡片。背单词、背古文、记公式都适用，电脑和手机都能同步。
+
+{\small\url{https://apps.ankiweb.net/}}\par
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{flomo 浮墨}\par
+随手记录想法，标签式整理，长期回看很有价值。网页和手机都能用。
+
+{\small\url{https://flomoapp.com/}}\par
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{印象笔记}\par
+更传统的笔记工具，适合长期收集资料、剪藏网页。
+
+{\small\url{https://www.yinxiang.com/}}\par
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{Obsidian}\par
+本地知识库，用双链把笔记连成网，适合做知识地图与错题体系。
+
+{\small\url{https://obsidian.md/}}\par
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{Notion}\par
+全能型工作台：笔记、表格、看板、进度表都能放进去。
+
+{\small\url{https://www.notion.so/}}\par
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{XMind}\par
+思维导图工具，用来整理章节框架与知识结构。
+
+{\small\url{https://xmind.cn/}}\par
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{幕布}\par
+大纲式笔记，一键转成思维导图，比 XMind 更轻。
+
+{\small\url{https://mubu.com/}}\par
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{微信读书}\par
+找小说最方便的地方，很多书可以免费读；划线看别人的想法也很有意思。
+
+{\small\url{https://weread.qq.com/}}\par
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{豆瓣读书}\par
+找书、看书评、看同类推荐。用好“想读”清单，比盲目买书强。
+
+{\small\url{https://book.douban.com/}}\par
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{潮汐 / Now 冥想}\par
+白噪音、冥想引导与睡前放松。在手机应用商店搜「潮汐」「Now 冥想」即可。
+
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{中国互联网联合辟谣平台}\par
+核查网络传言。配合“先停一下、再查来源”的习惯使用。
+
+{\small\url{https://www.piyao.org.cn/}}\par
+\vspace{0.25\baselineskip}
+\needspace{6\baselineskip}
+\phantomsection\subsection*{可打印模板}\addcontentsline{toc}{subsection}{可打印模板}
+{\kaishu\small 打开对应工具，点「打印」就能生成纸质表格。}\par
+\needspace{5\baselineskip}
+\noindent\textbf{每周复盘表}\par
+15 分钟回顾一周，找到下周要改的一件事。
+
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{考后复盘表}\par
+按科目统计失分类型，把情绪变成信息。
+
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{目标与计划表}\par
+可衡量的目标 + 如果—那么计划 + 每周三件事。
+
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{时间四象限}\par
+分清重要与紧急，先做重要但不紧急的事。
+
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{五栏记录表}\par
+把事情和想法分开写，找出更准确的说法。
+
+\vspace{0.25\baselineskip}
+\needspace{5\baselineskip}
+\noindent\textbf{每日状态记录}\par
+记录状态、原因与应对，可导出 CSV。
+
+\vspace{0.25\baselineskip}
+\chapterheading{附录三　需要帮助时}{需要帮助时}
+{\kaishu 这一页留着几件实在的事。如果你最近很难受，可以按顺序往下看。}\par
+\internalheading{可以先做的三件事}
+\begin{enumerate}
+\item \textbf{找一个能说话的人。}家人、朋友、老师、宿管、学校心理老师都可以。开口不需要理由，也不需要先把事情说清楚。
+\item \textbf{打一个电话。}热线是匿名的，不需要“够严重”才有资格打。有人愿意听你说。
+\item \textbf{去看一次医生。}如果这种状态持续了两周以上、影响了睡眠和吃饭，去医院的精神心理科或睡眠门诊挂个号就好，和看感冒一样。
+\end{enumerate}
+
+\begin{quote}
+\kaishu
+\noindent\textbf{想对你说}\quad
+求助不是软弱，也不是“我扛不住”。它只是一件具体的事：\textbf{在合适的时候，找合适的人。}
+\end{quote}
+
+\internalheading{如果你身边有人状态很差}
+\begin{itemize}
+\item 直接问一句：“你最近是不是很难受？”——问出来不会让事情变糟，反而常常是转折点。
+\item 认真听，不急着评价，也不说“你想太多了”。
+\item 陪着他，别让他一个人待着；必要时联系他的家人或老师。
+\item 把危险的东西暂时移开，需要时拨打 120。
+\end{itemize}
+
+\begin{quote}
+\noindent\textbf{这些顾虑很正常}\quad
+担心被人知道、担心被记录、担心“占用资源”——这些都很常见。热线是匿名的，不会主动通知任何人；学校心理老师也有保密义务。
+\end{quote}
+
+\internalheading{可以打的电话}
+\begin{center}
+\begingroup
+\renewcommand{\arraystretch}{1.10}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{>{\RaggedRight\arraybackslash}p{0.380\textwidth}>{\RaggedRight\arraybackslash}p{0.550\textwidth}}
+\toprule
+\textbf{号码} & \textbf{名称与说明} \\
+\midrule
+12356 & \textbf{全国心理援助热线}　国家卫生健康委统一部署，各地心理服务机构接听，多数地区可 24 小时拨打 \\
+12355 & \textbf{青少年服务台（共青团）}　面向青少年及家长，提供心理疏导、法律咨询、成长困扰等支持 \\
+010-82951332 & \textbf{北京心理危机研究与干预中心}　24 小时热线（全国可拨） \\
+400-161-9995 & \textbf{希望 24 热线}　面向抑郁与危机人群的公益热线 \\
+120 / 110 & \textbf{急救 / 公安}　紧急情况请立即拨打 \\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{center}
+
+{\kaishu\small 热线号码可能随时间调整，请以当地卫生健康部门最新公布为准。}\par
+\chapterheading{附录四　关于本站}{关于本站}
+{\kaishu 这个网站是什么、为什么做、你的数据去了哪里。}\par
+\internalheading{这个网站是什么}
+「Home of 17.」是一个学生写给学生的个人站点。它谈的不是技巧，是六件想清楚了会一直有用的事：过程比结果重要、别被功利心牵着走、把眼光放长、弄明白你为什么学习、不嫉妒也不崇拜天赋、至人只是常。在此之外，附上一些具体可用的方法与一份资源清单。
+
+\internalheading{为什么做这个}
+因为我在十七岁的时候，没有人跟我说过这些。那时候所有人的话题都绕着分数转，没有人问我为什么学，也没有人告诉我，那三年真正塑造一个人的，是那些当时根本不计分的东西。
+
+\Needspace{0.90\textheight}
+\internalheading{内容怎么组织的}
+\begin{center}
+\begingroup
+\renewcommand{\arraystretch}{1.10}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{>{\RaggedRight\arraybackslash}p{0.380\textwidth}>{\RaggedRight\arraybackslash}p{0.550\textwidth}}
+\toprule
+\textbf{章节} & \textbf{讲什么} \\
+\midrule
+一 · 为什么学 & 把学习的理由想清楚，再谈努力 \\
+二 · 过程比结果更重要 & 看清结果里有多少运气，把注意力放回可控的部分 \\
+三 · 慢下来 & 功利心如何改变我们，以及“无用之用” \\
+四 · 长远的眼光 & 什么在长期增值，什么在悄悄折旧 \\
+五 · 天赋 & 不嫉妒别人的天赋，也不崇拜它——愿意努力本身就是一种天赋 \\
+六 · 至人只是常 & 真正厉害的人看起来往往很平常，不必活成传奇 \\
+七 · 具体的处境 & 和父母、朋友、手机、睡眠、时间、考试 \\
+方法与工具 & 八个可以直接用的工具，数据只存在你自己的浏览器 \\
+资源库 & 书单（以小说为主）、公开课、影片与工具 \\
+读者想说 & 全站最后单独一页，可以写下你自己的感想 \\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{center}
+
+\internalheading{一个说明}
+本站是个人整理的学习与成长材料，不构成任何专业建议。如果你正被持续的情绪或睡眠问题困扰，请去看医生或找学校心理老师——《需要帮助时》那一页留了一些联系方式。
+
+\internalheading{关于隐私}
+\begin{itemize}
+\item 本站是纯静态网页，\textbf{没有服务器、没有账号、没有上报}。
+\item 你在工具里填写的内容（状态记录、复盘、任务清单等）只保存在你自己浏览器的 localStorage 中。
+\item 换浏览器、清理浏览器数据会导致记录丢失，重要的内容请用工具页的「导出」按钮备份。
+\item 在公共电脑上使用后，可在左侧「方法与工具」页点「清空全部记录」。
+\end{itemize}
+
+\internalheading{参考与出处}
+内容主要来自公开的阅读与常识：心态部分参考了成长型思维、执行意图（如果—那么计划）等心理学研究；学习方法部分参考了认知科学关于记忆与练习的结论；此外还有大量来自小说、散文、历史与传记的启发——资源库里那份书单可以顺藤摸瓜。
+
+\internalheading{更新与联系}
+这个站点会持续补充，尤其是《作者想说的话》那一页。
+
+有想法、有不同意见、想说说你自己的经验，或者发现哪里写错了，欢迎写在最后的「读者想说」里，或者直接写信：\textbf{1876148307@qq.com}
+
+\chapterheading{附录五　读者想说}{读者想说}
+读完之后，如果你有话想说——同意、反对、补充，或者你自己的经历——都可以写在这里。
+
+\internalheading{不知道写什么的话，可以从这三个问题开始}
+\begin{enumerate}
+\item 这四件事里，哪一件最戳中你？为什么是它？
+\item 你自己的高中生活里，有没有一个“过程比结果重要”的瞬间？
+\item 如果给一年后的自己写一句话，你会写什么？
+\end{enumerate}
+\begin{quote}
+\kaishu 写完可以「保存」——它会立刻出现在下面，但只留在你这台设备上；想让作者看到，点「寄给作者」，作者读过之后会挑选一些放进「来信」里。
+\end{quote}
+\noindent\textbf{寄给作者}\quad\url{1876148307@qq.com}\par
+\vspace{0.7\baselineskip}\noindent\rule{0.30\textwidth}{0.4pt}\par
+{\kaishu 下面是作者挑选后放上来的来信（会陆续更新）。}\par
+{\kaishu 还没有公开的来信。你的可以是第一封。}\par
+\chapterheading{版本记录}{版本记录}
+\renewcommand{\arraystretch}{1.10}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{>{\RaggedRight\arraybackslash}p{0.25\textwidth}>{\RaggedRight\arraybackslash}p{0.64\textwidth}}
+\toprule
+\textbf{项目} & \textbf{内容} \\
+\midrule
+书名 & Home of 17.（写给高中生的六件事） \\
+内容 & 六件事 · 卷首 · 七章 29 篇 · 附录五个 \\
+附录 & 八个自助工具 · 11 类 66 条资源 · 需要帮助时 · 关于本站 · 读者想说 \\
+来源 & \url{https://csq798.github.io/Home-of-17/} \\
+编排 & 据网站内容重排，文字与网站一致（网站是原稿） \\
+排版 & 论文式单栏；标题、正文与引文保持统一宋体 \\
+开本 & A4（210 × 297 毫米），论文式单栏排版 \\
+字体与字号 & 全文统一使用宋体，标题以粗体区分，正文 9 pt \\
+日期 & 2026 年 10 月 4 日 \\
+来信 & \url{1876148307@qq.com} \\
+\bottomrule
+\end{tabular}
+
+\end{document}
